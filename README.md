@@ -1,4 +1,4 @@
-# flakes
+# pkgs
 
 Custom Nix packages.
 
@@ -13,7 +13,7 @@ Custom Nix packages.
 ### Run without installing
 
 ```bash
-nix run github:chikof/flakes#<package>
+nix run github:chikof/pkgs#<package>
 ```
 
 ### NixOS / home-manager (overlay)
@@ -21,7 +21,7 @@ nix run github:chikof/flakes#<package>
 Add to your flake inputs:
 
 ```nix
-inputs.custom-pkgs.url = "github:chikof/flakes";
+inputs.custom-pkgs.url = "github:chikof/pkgs";
 ```
 
 Apply the overlay:
