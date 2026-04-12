@@ -1,0 +1,4 @@
+[equibop]
+src.git = "https://github.com/Equicord/Equicord"
+src.branch = "dev"
+fetch.github = "Equicord/Equicord"

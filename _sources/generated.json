@@ -1,0 +1,23 @@
+{
+    "equibop": {
+        "cargoLock": null,
+        "date": "2026-04-12",
+        "extract": null,
+        "name": "equibop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Equicord",
+            "repo": "Equicord",
+            "rev": "ad51504d6dd5a948d0b59327572e219f34c644ae",
+            "sha256": "sha256-CnqaVbHv+61/5BTK7dBtpGNpbcZOrTWr4cwr4EOxbFA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "ad51504d6dd5a948d0b59327572e219f34c644ae"
+    }
+}
