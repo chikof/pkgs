@@ -6,6 +6,23 @@
   dockerTools,
 }:
 {
+  cord-nvim = {
+    pname = "cord-nvim";
+    version = "v2.3.20";
+    src = fetchFromGitHub {
+      owner = "vyfor";
+      repo = "cord.nvim";
+      rev = "v2.3.20";
+      fetchSubmodules = false;
+      sha256 = "sha256-9ZPczSPtMls78hBze+tF0pbm9OpSyNc1fAFo4NHg1Tk=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-9ZPczSPtMls78hBze+tF0pbm9OpSyNc1fAFo4NHg1Tk=/Cargo.lock";
+      outputHashes = {
+        
+      };
+    };
+  };
   equibop = {
     pname = "equibop";
     version = "ad51504d6dd5a948d0b59327572e219f34c644ae";

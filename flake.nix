@@ -20,11 +20,21 @@
 
     packages = forAllSystems (system: let
       pkgs = pkgsFor system;
+      pkgSet = import ./packages {inherit pkgs maintainers;};
     in
-      import ./packages {inherit pkgs maintainers;});
+      nixpkgs.lib.mapAttrs (
+        name: value:
+          if nixpkgs.lib.isDerivation value
+          then value
+          else removeAttrs value (builtins.attrNames (pkgs.${name} or {}))
+      )
+      pkgSet);
 
     overlays.default = final: prev:
-      import ./packages {pkgs = prev; inherit maintainers;};
+      import ./packages {
+        pkgs = prev;
+        inherit maintainers;
+      };
 
     formatter = forAllSystems (system: (pkgsFor system).alejandra);
 

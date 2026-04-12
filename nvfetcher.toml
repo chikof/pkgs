@@ -2,3 +2,8 @@
 src.git = "https://github.com/Equicord/Equicord"
 src.branch = "dev"
 fetch.github = "Equicord/Equicord"
+
+[cord-nvim]
+src.github_tag = "vyfor/cord.nvim"
+fetch.github = "vyfor/cord.nvim"
+cargo_lock = ["Cargo.lock"]

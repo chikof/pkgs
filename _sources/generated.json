@@ -1,4 +1,30 @@
 {
+    "cord-nvim": {
+        "cargoLock": {
+            "Cargo.lock": [
+                "sha256-9ZPczSPtMls78hBze+tF0pbm9OpSyNc1fAFo4NHg1Tk=/Cargo.lock",
+                {}
+            ]
+        },
+        "date": null,
+        "extract": null,
+        "name": "cord-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vyfor",
+            "repo": "cord.nvim",
+            "rev": "v2.3.20",
+            "sha256": "sha256-9ZPczSPtMls78hBze+tF0pbm9OpSyNc1fAFo4NHg1Tk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2.3.20"
+    },
     "equibop": {
         "cargoLock": null,
         "date": "2026-04-12",

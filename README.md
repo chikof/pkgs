@@ -4,9 +4,10 @@ Custom Nix packages.
 
 ## Packages
 
-| Name      | Description                     |
-| --------- | ------------------------------- |
-| `equibop` | Other cutest Discord client mod |
+| Name                  | Description                      |
+| ---------             | -------------------------------- |
+| `equibop`             | Other cutest Discord client mod  |
+| `vimPlugin.cord-nvim` | Discord Rich Presence for Neovim |
 
 ## Install
 
