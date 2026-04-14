@@ -35,4 +35,18 @@
     };
     date = "2026-04-12";
   };
+  unfetch = {
+    pname = "unfetch";
+    version = "76f2a2fb1ce40b352c505fa3e5e47effa6654246";
+    src = fetchgit {
+      url = "https://codeberg.org/ungo/unfetch";
+      rev = "76f2a2fb1ce40b352c505fa3e5e47effa6654246";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-Yv7U6n+xMgFhawGP9mU0h1gjkn4VLTgKTHeNt7Hb0js=";
+    };
+    date = "2026-03-11";
+  };
 }

@@ -7,3 +7,8 @@ fetch.github = "Equicord/Equicord"
 src.github_tag = "vyfor/cord.nvim"
 fetch.github = "vyfor/cord.nvim"
 cargo_lock = ["Cargo.lock"]
+
+[unfetch]
+src.git = "https://codeberg.org/ungo/unfetch"
+src.branch = "main"
+fetch.git = "https://codeberg.org/ungo/unfetch"

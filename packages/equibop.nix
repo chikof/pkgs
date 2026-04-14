@@ -71,6 +71,6 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/Equicord/Equicord";
     license = lib.licenses.gpl3Only;
     platforms = lib.platforms.unix;
-    maintainers = [ maintainers.chiko ];
+    maintainers = [maintainers.chiko];
   };
 })
