@@ -25,15 +25,15 @@
   };
   equibop = {
     pname = "equibop";
-    version = "ad51504d6dd5a948d0b59327572e219f34c644ae";
+    version = "9070e4ea39bfe77dcebfb0c457214515db03645a";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "ad51504d6dd5a948d0b59327572e219f34c644ae";
+      rev = "9070e4ea39bfe77dcebfb0c457214515db03645a";
       fetchSubmodules = false;
-      sha256 = "sha256-CnqaVbHv+61/5BTK7dBtpGNpbcZOrTWr4cwr4EOxbFA=";
+      sha256 = "sha256-u8GFvmKXkJexd6cppIFpBxjLg4dNFdZqxFFk/RxlfUg=";
     };
-    date = "2026-04-12";
+    date = "2026-04-14";
   };
   unfetch = {
     pname = "unfetch";

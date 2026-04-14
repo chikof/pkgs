@@ -27,7 +27,7 @@
     },
     "equibop": {
         "cargoLock": null,
-        "date": "2026-04-12",
+        "date": "2026-04-14",
         "extract": null,
         "name": "equibop",
         "passthru": null,
@@ -39,12 +39,12 @@
             "name": null,
             "owner": "Equicord",
             "repo": "Equicord",
-            "rev": "ad51504d6dd5a948d0b59327572e219f34c644ae",
-            "sha256": "sha256-CnqaVbHv+61/5BTK7dBtpGNpbcZOrTWr4cwr4EOxbFA=",
+            "rev": "9070e4ea39bfe77dcebfb0c457214515db03645a",
+            "sha256": "sha256-u8GFvmKXkJexd6cppIFpBxjLg4dNFdZqxFFk/RxlfUg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ad51504d6dd5a948d0b59327572e219f34c644ae"
+        "version": "9070e4ea39bfe77dcebfb0c457214515db03645a"
     },
     "unfetch": {
         "cargoLock": null,
