@@ -46,6 +46,27 @@
         },
         "version": "9070e4ea39bfe77dcebfb0c457214515db03645a"
     },
+    "nano-ffmpeg": {
+        "cargoLock": null,
+        "date": "2026-04-16",
+        "extract": null,
+        "name": "nano-ffmpeg",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dgr8akki",
+            "repo": "nano-ffmpeg",
+            "rev": "6f8d9459ae6a5a1fece311928ceb3e341f637bb5",
+            "sha256": "sha256-sWkZkJmFbTtNcx1N31TMJ4WvMR/p8qs1iF4QlnY9s0o=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "6f8d9459ae6a5a1fece311928ceb3e341f637bb5"
+    },
     "unfetch": {
         "cargoLock": null,
         "date": "2026-03-11",

@@ -35,6 +35,18 @@
     };
     date = "2026-04-14";
   };
+  nano-ffmpeg = {
+    pname = "nano-ffmpeg";
+    version = "6f8d9459ae6a5a1fece311928ceb3e341f637bb5";
+    src = fetchFromGitHub {
+      owner = "dgr8akki";
+      repo = "nano-ffmpeg";
+      rev = "6f8d9459ae6a5a1fece311928ceb3e341f637bb5";
+      fetchSubmodules = false;
+      sha256 = "sha256-sWkZkJmFbTtNcx1N31TMJ4WvMR/p8qs1iF4QlnY9s0o=";
+    };
+    date = "2026-04-16";
+  };
   unfetch = {
     pname = "unfetch";
     version = "76f2a2fb1ce40b352c505fa3e5e47effa6654246";

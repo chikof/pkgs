@@ -12,3 +12,8 @@ cargo_lock = ["Cargo.lock"]
 src.git = "https://codeberg.org/ungo/unfetch"
 src.branch = "main"
 fetch.git = "https://codeberg.org/ungo/unfetch"
+
+[nano-ffmpeg]
+src.git = "https://github.com/dgr8akki/nano-ffmpeg.git"
+src.branch = "main"
+fetch.github = "dgr8akki/nano-ffmpeg"

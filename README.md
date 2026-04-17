@@ -9,6 +9,7 @@ Custom Nix packages.
 | `equibop`             | Other cutest Discord client mod      |
 | `vimPlugin.cord-nvim` | Discord Rich Presence for Neovim     |
 | `unfetch`             | Simple and customizable system fetch |
+| `nano-ffmpeg`         | Ffmpeg made easy (TUI)               |
 
 ## Install
 
