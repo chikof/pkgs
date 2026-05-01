@@ -25,27 +25,27 @@
   };
   equibop = {
     pname = "equibop";
-    version = "81c1be068a05197ded7afe83a8212226f5fc97ba";
+    version = "2f047c1ce69661aeea14843808d1d9e1ec2ae21f";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "81c1be068a05197ded7afe83a8212226f5fc97ba";
+      rev = "2f047c1ce69661aeea14843808d1d9e1ec2ae21f";
       fetchSubmodules = false;
-      sha256 = "sha256-/XmfFVYSJX6cmVEsvLjyi0Im4jdoJyx4yTz9mTtZFBA=";
+      sha256 = "sha256-oxibjNpFz1ei/pFIH2GfRI2NgjaSvaWSal42vITnHhA=";
     };
-    date = "2026-04-24";
+    date = "2026-05-01";
   };
   nano-ffmpeg = {
     pname = "nano-ffmpeg";
-    version = "b3f01aa076b0fd8c3ff8f71cec69f787ece06095";
+    version = "f51b0acc157f96682e2f93a5b994766b039ec2ba";
     src = fetchFromGitHub {
       owner = "dgr8akki";
       repo = "nano-ffmpeg";
-      rev = "b3f01aa076b0fd8c3ff8f71cec69f787ece06095";
+      rev = "f51b0acc157f96682e2f93a5b994766b039ec2ba";
       fetchSubmodules = false;
-      sha256 = "sha256-gnlYkG2Q/WtkH9x6Mhf7BunYMJPD+ZzZS760JJK6ZwI=";
+      sha256 = "sha256-4uZ2y+Qe4uMrnpzl8BHQEWFNkhwNBBwoxb5RMnLyGfM=";
     };
-    date = "2026-04-18";
+    date = "2026-04-25";
   };
   unfetch = {
     pname = "unfetch";
