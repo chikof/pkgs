@@ -1,6 +1,5 @@
 {
   lib,
-  stdenv,
   buildGo125Module,
   sources,
   maintainers,
