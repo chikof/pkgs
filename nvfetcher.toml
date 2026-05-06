@@ -1,6 +1,6 @@
 [equibop]
 src.git = "https://github.com/Equicord/Equicord"
-src.branch = "dev"
+src.branch = "main"
 fetch.github = "Equicord/Equicord"
 
 [cord-nvim]
