@@ -35,6 +35,20 @@
     };
     date = "2026-05-10";
   };
+  g = {
+    pname = "g";
+    version = "e102a8b8ab8fc5ffd5b12c6b0e1b06c92914896a";
+    src = fetchgit {
+      url = "https://codeberg.org/ungo/g";
+      rev = "e102a8b8ab8fc5ffd5b12c6b0e1b06c92914896a";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-sNQchzOsvp+iMpk8deBBJpFR01Ks5ukS8Z/Mr58kVRM=";
+    };
+    date = "2026-04-26";
+  };
   nano-ffmpeg = {
     pname = "nano-ffmpeg";
     version = "f51b0acc157f96682e2f93a5b994766b039ec2ba";

@@ -17,3 +17,8 @@ fetch.git = "https://codeberg.org/ungo/unfetch"
 src.git = "https://github.com/dgr8akki/nano-ffmpeg.git"
 src.branch = "main"
 fetch.github = "dgr8akki/nano-ffmpeg"
+
+[g]
+src.git = "https://codeberg.org/ungo/g"
+src.branch = "main"
+fetch.git = "https://codeberg.org/ungo/g"

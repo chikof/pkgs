@@ -10,6 +10,7 @@ Custom Nix packages.
 | `vimPlugin.cord-nvim` | Discord Rich Presence for Neovim     |
 | `unfetch`             | Simple and customizable system fetch |
 | `nano-ffmpeg`         | Ffmpeg made easy (TUI)               |
+| `g`                   | minimal yet styled git wrapper.      |
 
 ## Install
 
