@@ -25,15 +25,15 @@
   };
   equibop = {
     pname = "equibop";
-    version = "d7a841f1b3fe8622ff58647b48fae0414534a604";
+    version = "4127eb22d6db3e99620991031adad7277ee3c8f5";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "d7a841f1b3fe8622ff58647b48fae0414534a604";
+      rev = "4127eb22d6db3e99620991031adad7277ee3c8f5";
       fetchSubmodules = false;
-      sha256 = "sha256-/MxSKCvmDacdOShHAN3rlOBSPUbQL7/pJnL79QGCW7g=";
+      sha256 = "sha256-IW/rJ3bkJEMuonLI8+v6dQwTJKGthmpeMt48oXVBBnA=";
     };
-    date = "2026-05-05";
+    date = "2026-05-10";
   };
   nano-ffmpeg = {
     pname = "nano-ffmpeg";
