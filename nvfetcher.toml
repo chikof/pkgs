@@ -22,3 +22,7 @@ fetch.github = "dgr8akki/nano-ffmpeg"
 src.git = "https://codeberg.org/ungo/g"
 src.branch = "main"
 fetch.git = "https://codeberg.org/ungo/g"
+
+[cavemem]
+src.github_tag = "JuliusBrussee/cavemem"
+fetch.github = "JuliusBrussee/cavemem"

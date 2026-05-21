@@ -1,4 +1,25 @@
 {
+    "cavemem": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "cavemem",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "JuliusBrussee",
+            "repo": "cavemem",
+            "rev": "v0.2.1",
+            "sha256": "sha256-0YkpwaBYyH/nJCV0Y2EvaFL1KEvVtgf/tN2h1azwdNg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.2.1"
+    },
     "cord-nvim": {
         "cargoLock": {
             "Cargo.lock": [
@@ -27,7 +48,7 @@
     },
     "equibop": {
         "cargoLock": null,
-        "date": "2026-05-10",
+        "date": "2026-05-19",
         "extract": null,
         "name": "equibop",
         "passthru": null,
@@ -39,12 +60,12 @@
             "name": null,
             "owner": "Equicord",
             "repo": "Equicord",
-            "rev": "4127eb22d6db3e99620991031adad7277ee3c8f5",
-            "sha256": "sha256-IW/rJ3bkJEMuonLI8+v6dQwTJKGthmpeMt48oXVBBnA=",
+            "rev": "36cb2764727cd706948c4ed757c68431c53cbf16",
+            "sha256": "sha256-x5h9KuAGfgJhmMbISgDTnN/J0hQ9l4T05e8mm/gvUm4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "4127eb22d6db3e99620991031adad7277ee3c8f5"
+        "version": "36cb2764727cd706948c4ed757c68431c53cbf16"
     },
     "g": {
         "cargoLock": null,

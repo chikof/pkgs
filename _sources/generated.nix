@@ -6,6 +6,17 @@
   dockerTools,
 }:
 {
+  cavemem = {
+    pname = "cavemem";
+    version = "v0.2.1";
+    src = fetchFromGitHub {
+      owner = "JuliusBrussee";
+      repo = "cavemem";
+      rev = "v0.2.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-0YkpwaBYyH/nJCV0Y2EvaFL1KEvVtgf/tN2h1azwdNg=";
+    };
+  };
   cord-nvim = {
     pname = "cord-nvim";
     version = "v2.3.20";
@@ -25,15 +36,15 @@
   };
   equibop = {
     pname = "equibop";
-    version = "4127eb22d6db3e99620991031adad7277ee3c8f5";
+    version = "36cb2764727cd706948c4ed757c68431c53cbf16";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "4127eb22d6db3e99620991031adad7277ee3c8f5";
+      rev = "36cb2764727cd706948c4ed757c68431c53cbf16";
       fetchSubmodules = false;
-      sha256 = "sha256-IW/rJ3bkJEMuonLI8+v6dQwTJKGthmpeMt48oXVBBnA=";
+      sha256 = "sha256-x5h9KuAGfgJhmMbISgDTnN/J0hQ9l4T05e8mm/gvUm4=";
     };
-    date = "2026-05-10";
+    date = "2026-05-19";
   };
   g = {
     pname = "g";
