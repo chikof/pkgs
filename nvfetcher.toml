@@ -26,3 +26,7 @@ fetch.git = "https://codeberg.org/ungo/g"
 [cavemem]
 src.github_tag = "JuliusBrussee/cavemem"
 fetch.github = "JuliusBrussee/cavemem"
+
+[typescript-svelte-plugin]
+src.manual = "0.3.52"
+fetch.url = "https://registry.npmjs.org/typescript-svelte-plugin/-/typescript-svelte-plugin-$ver.tgz"

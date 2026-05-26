@@ -108,6 +108,21 @@
         },
         "version": "f51b0acc157f96682e2f93a5b994766b039ec2ba"
     },
+    "typescript-svelte-plugin": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "typescript-svelte-plugin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-F0psKMVXJw4hSucCUtgHw/47uA0k+sbMqRdhZFTwAFo=",
+            "type": "url",
+            "url": "https://registry.npmjs.org/typescript-svelte-plugin/-/typescript-svelte-plugin-0.3.52.tgz"
+        },
+        "version": "0.3.52"
+    },
     "unfetch": {
         "cargoLock": null,
         "date": "2026-03-11",

@@ -72,6 +72,14 @@
     };
     date = "2026-04-25";
   };
+  typescript-svelte-plugin = {
+    pname = "typescript-svelte-plugin";
+    version = "0.3.52";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/typescript-svelte-plugin/-/typescript-svelte-plugin-0.3.52.tgz";
+      sha256 = "sha256-F0psKMVXJw4hSucCUtgHw/47uA0k+sbMqRdhZFTwAFo=";
+    };
+  };
   unfetch = {
     pname = "unfetch";
     version = "76f2a2fb1ce40b352c505fa3e5e47effa6654246";
