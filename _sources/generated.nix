@@ -19,16 +19,16 @@
   };
   cord-nvim = {
     pname = "cord-nvim";
-    version = "v2.3.20";
+    version = "v2.3.21";
     src = fetchFromGitHub {
       owner = "vyfor";
       repo = "cord.nvim";
-      rev = "v2.3.20";
+      rev = "v2.3.21";
       fetchSubmodules = false;
-      sha256 = "sha256-9ZPczSPtMls78hBze+tF0pbm9OpSyNc1fAFo4NHg1Tk=";
+      sha256 = "sha256-IRbo0otJ3onH9cmwPXAFzomCktv+ACbzponpN8quPt8=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-9ZPczSPtMls78hBze+tF0pbm9OpSyNc1fAFo4NHg1Tk=/Cargo.lock";
+      lockFile = ./. + "/sha256-IRbo0otJ3onH9cmwPXAFzomCktv+ACbzponpN8quPt8=/Cargo.lock";
       outputHashes = {
         
       };
@@ -36,15 +36,15 @@
   };
   equibop = {
     pname = "equibop";
-    version = "36cb2764727cd706948c4ed757c68431c53cbf16";
+    version = "0f1788117c5fbb0ed8365895509f974ac243cbab";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "36cb2764727cd706948c4ed757c68431c53cbf16";
+      rev = "0f1788117c5fbb0ed8365895509f974ac243cbab";
       fetchSubmodules = false;
-      sha256 = "sha256-x5h9KuAGfgJhmMbISgDTnN/J0hQ9l4T05e8mm/gvUm4=";
+      sha256 = "sha256-A1Nrw/sQwN0ZghDcmZDNFi77kn8EZhoZkFqnlHS/FcU=";
     };
-    date = "2026-05-19";
+    date = "2026-05-29";
   };
   g = {
     pname = "g";
