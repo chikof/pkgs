@@ -2,7 +2,8 @@
   fetchPnpmDeps,
   lib,
   makeWrapper,
-  nodejs_22,
+  nodejs_24,
+  node-gyp,
   pkg-config,
   pnpm_9,
   pnpmConfigHook,
@@ -28,12 +29,13 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   nativeBuildInputs = [
-    nodejs_22
+    nodejs_24
     pnpm_9
     pnpmConfigHook
     makeWrapper
     python3
     pkg-config
+    node-gyp
   ];
 
   buildInputs = [
@@ -42,6 +44,9 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildPhase = ''
     runHook preBuild
+    pushd node_modules/better-sqlite3
+    node-gyp rebuild --nodedir=${nodejs_24}/include/node
+    popd
     pnpm --filter cavemem build
     runHook postBuild
   '';
@@ -53,7 +58,7 @@ stdenv.mkDerivation (finalAttrs: {
     cp apps/cli/package.json $out/lib/cavemem/
     cp -rL node_modules $out/lib/cavemem/
     mkdir -p $out/bin
-    makeWrapper ${nodejs_22}/bin/node $out/bin/cavemem \
+    makeWrapper ${nodejs_24}/bin/node $out/bin/cavemem \
       --add-flags "$out/lib/cavemem/dist/index.js"
     runHook postInstall
   '';
