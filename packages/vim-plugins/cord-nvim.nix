@@ -41,6 +41,7 @@ in
         --replace-fail \
           "or M.get_data_path()" \
           "or '${cord-server}'"
+      echo "${lib.removePrefix "v" version}" > .github/server-metadata.txt
     '';
 
     nvimSkipModules = [
