@@ -30,3 +30,8 @@ fetch.github = "JuliusBrussee/cavemem"
 [typescript-svelte-plugin]
 src.manual = "0.3.52"
 fetch.url = "https://registry.npmjs.org/typescript-svelte-plugin/-/typescript-svelte-plugin-$ver.tgz"
+
+[fallow]
+src.github_tag = "fallow-rs/fallow"
+fetch.github = "fallow-rs/fallow"
+cargo_lock = ["Cargo.lock"]

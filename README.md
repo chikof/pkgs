@@ -4,15 +4,16 @@ Custom Nix packages.
 
 ## Packages
 
-| Name                                   | Description                                            |
-| -------------------------------------- | ------------------------------------------------------ |
-| `equibop`                              | Other cutest Discord client mod                        |
-| `vimPlugin.cord-nvim`                  | Discord Rich Presence for Neovim                       |
-| `unfetch`                              | Simple and customizable system fetch                   |
-| `nano-ffmpeg`                          | Ffmpeg made easy (TUI)                                 |
-| `g`                                    | minimal yet styled git wrapper.                        |
-| `cavemem`                              | Cross-agent persistent memory for AI coding assistants |
-| `typescript-svelte-plugin`             | TypeScript plugin for Svelte                           |
+| Name                                   | Description                                                     |
+| -------------------------------------- | --------------------------------------------------------------- |
+| `equibop`                              | Other cutest Discord client mod                                 |
+| `vimPlugin.cord-nvim`                  | Discord Rich Presence for Neovim                                |
+| `unfetch`                              | Simple and customizable system fetch                            |
+| `nano-ffmpeg`                          | Ffmpeg made easy (TUI)                                          |
+| `g`                                    | minimal yet styled git wrapper.                                 |
+| `cavemem`                              | Cross-agent persistent memory for AI coding assistants          |
+| `typescript-svelte-plugin`             | TypeScript plugin for Svelte                                    |
+| `fallow`                               | Rust-native codebase intelligence for TypeScript and JavaScript |
 
 ## Install
 

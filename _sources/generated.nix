@@ -36,15 +36,32 @@
   };
   equibop = {
     pname = "equibop";
-    version = "0f1788117c5fbb0ed8365895509f974ac243cbab";
+    version = "d7567396ff3834cb2a68f7024a18bbb995d7310c";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "0f1788117c5fbb0ed8365895509f974ac243cbab";
+      rev = "d7567396ff3834cb2a68f7024a18bbb995d7310c";
       fetchSubmodules = false;
-      sha256 = "sha256-A1Nrw/sQwN0ZghDcmZDNFi77kn8EZhoZkFqnlHS/FcU=";
+      sha256 = "sha256-inLli2is0GUWOZlLTGA3E8dIzCnkWWYGhu7ebXiZAl0=";
     };
-    date = "2026-05-29";
+    date = "2026-06-08";
+  };
+  fallow = {
+    pname = "fallow";
+    version = "v2.90.0";
+    src = fetchFromGitHub {
+      owner = "fallow-rs";
+      repo = "fallow";
+      rev = "v2.90.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-eMXgwir/rHKi7QCimoHq30o4nvaUNN2aNQMCacH/+kU=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-eMXgwir_rHKi7QCimoHq30o4nvaUNN2aNQMCacH_+kU=/Cargo.lock";
+      outputHashes = {
+        
+      };
+    };
   };
   g = {
     pname = "g";
