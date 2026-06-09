@@ -77,6 +77,20 @@
     };
     date = "2026-04-26";
   };
+  grompt = {
+    pname = "grompt";
+    version = "454b177040cd38da0398b2672f74b262d67f65cb";
+    src = fetchgit {
+      url = "https://codeberg.org/estebxn/grompt";
+      rev = "454b177040cd38da0398b2672f74b262d67f65cb";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-PY7xJvn14rI27DVTzJYgJkQ7e9IRPbCXcYVXOhTkWjQ=";
+    };
+    date = "2026-06-03";
+  };
   nano-ffmpeg = {
     pname = "nano-ffmpeg";
     version = "f51b0acc157f96682e2f93a5b994766b039ec2ba";

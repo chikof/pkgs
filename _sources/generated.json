@@ -113,6 +113,26 @@
         },
         "version": "e102a8b8ab8fc5ffd5b12c6b0e1b06c92914896a"
     },
+    "grompt": {
+        "cargoLock": null,
+        "date": "2026-06-03",
+        "extract": null,
+        "name": "grompt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "454b177040cd38da0398b2672f74b262d67f65cb",
+            "sha256": "sha256-PY7xJvn14rI27DVTzJYgJkQ7e9IRPbCXcYVXOhTkWjQ=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://codeberg.org/estebxn/grompt"
+        },
+        "version": "454b177040cd38da0398b2672f74b262d67f65cb"
+    },
     "nano-ffmpeg": {
         "cargoLock": null,
         "date": "2026-04-25",

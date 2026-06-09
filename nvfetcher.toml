@@ -35,3 +35,8 @@ fetch.url = "https://registry.npmjs.org/typescript-svelte-plugin/-/typescript-sv
 src.github_tag = "fallow-rs/fallow"
 fetch.github = "fallow-rs/fallow"
 cargo_lock = ["Cargo.lock"]
+
+[grompt]
+src.git = "https://codeberg.org/estebxn/grompt"
+src.branch = "master"
+fetch.git = "https://codeberg.org/estebxn/grompt"

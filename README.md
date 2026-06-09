@@ -14,6 +14,7 @@ Custom Nix packages.
 | `cavemem`                              | Cross-agent persistent memory for AI coding assistants          |
 | `typescript-svelte-plugin`             | TypeScript plugin for Svelte                                    |
 | `fallow`                               | Rust-native codebase intelligence for TypeScript and JavaScript |
+| `grompt`                               | starship.rs killer                                              |
 
 ## Install
 
