@@ -12,6 +12,7 @@ in {
   typescript-svelte-plugin = pkgs.callPackage ./typescript-svelte-plugin.nix {inherit sources maintainers;};
   fallow = pkgs.callPackage ./fallow.nix {inherit sources maintainers;};
   grompt = pkgs.callPackage ./grompt.nix {inherit sources maintainers;};
+  graphify = pkgs.python3Packages.callPackage ./graphify.nix {inherit sources maintainers;};
 
   vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs sources maintainers;};
 }

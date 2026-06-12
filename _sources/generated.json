@@ -48,7 +48,7 @@
     },
     "equibop": {
         "cargoLock": null,
-        "date": "2026-06-08",
+        "date": "2026-06-11",
         "extract": null,
         "name": "equibop",
         "passthru": null,
@@ -60,17 +60,17 @@
             "name": null,
             "owner": "Equicord",
             "repo": "Equicord",
-            "rev": "d7567396ff3834cb2a68f7024a18bbb995d7310c",
-            "sha256": "sha256-inLli2is0GUWOZlLTGA3E8dIzCnkWWYGhu7ebXiZAl0=",
+            "rev": "02b56940cfaca548eebd0457a0e469f2a2ec8f0e",
+            "sha256": "sha256-+3DvnoLwVOL0uJD5nuhfyXnnc4dnXXZrf3q4SqZFZsY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d7567396ff3834cb2a68f7024a18bbb995d7310c"
+        "version": "02b56940cfaca548eebd0457a0e469f2a2ec8f0e"
     },
     "fallow": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-eMXgwir_rHKi7QCimoHq30o4nvaUNN2aNQMCacH_+kU=/Cargo.lock",
+                "sha256-A2uKtyJ7Gfzp9R6Z+HMTWpxuUM6VSuHbRzUXFgotFlo=/Cargo.lock",
                 {}
             ]
         },
@@ -86,12 +86,12 @@
             "name": null,
             "owner": "fallow-rs",
             "repo": "fallow",
-            "rev": "v2.90.0",
-            "sha256": "sha256-eMXgwir/rHKi7QCimoHq30o4nvaUNN2aNQMCacH/+kU=",
+            "rev": "v2.94.0",
+            "sha256": "sha256-A2uKtyJ7Gfzp9R6Z+HMTWpxuUM6VSuHbRzUXFgotFlo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.90.0"
+        "version": "v2.94.0"
     },
     "g": {
         "cargoLock": null,
@@ -112,6 +112,27 @@
             "url": "https://codeberg.org/ungo/g"
         },
         "version": "e102a8b8ab8fc5ffd5b12c6b0e1b06c92914896a"
+    },
+    "graphify": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "graphify",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "safishamsi",
+            "repo": "graphify",
+            "rev": "v0.8.38",
+            "sha256": "sha256-/XmNW1UHo1jnfzv087uCzVerJCOXEvpqof3Ptf1HMR8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.8.38"
     },
     "grompt": {
         "cargoLock": null,

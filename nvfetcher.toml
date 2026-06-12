@@ -40,3 +40,8 @@ cargo_lock = ["Cargo.lock"]
 src.git = "https://codeberg.org/estebxn/grompt"
 src.branch = "master"
 fetch.git = "https://codeberg.org/estebxn/grompt"
+
+[graphify]
+src.github_tag = "safishamsi/graphify"
+fetch.github = "safishamsi/graphify"
+src.exclude_regex = "^v?1\\.0\\.0$"    # 1.0.0 is actually the oldest version

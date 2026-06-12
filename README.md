@@ -15,6 +15,7 @@ Custom Nix packages.
 | `typescript-svelte-plugin`             | TypeScript plugin for Svelte                                    |
 | `fallow`                               | Rust-native codebase intelligence for TypeScript and JavaScript |
 | `grompt`                               | starship.rs killer                                              |
+| `graphify`                             | AI coding assistant skill.                                      |
 
 ## Install
 
