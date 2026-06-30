@@ -5,7 +5,7 @@
   nodejs_24,
   node-gyp,
   pkg-config,
-  pnpm_9,
+  pnpm_10,
   pnpmConfigHook,
   python3,
   sqlite,
@@ -19,9 +19,9 @@ stdenv.mkDerivation (finalAttrs: {
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
-    pnpm = pnpm_9;
+    pnpm = pnpm_10;
     fetcherVersion = 3;
-    hash = "sha256-xVdck9jTZPm3gf3kZ/KZI4bO0jkTfhZP5j41MlNAvlA=";
+    hash = "sha256-/C4HE52RMiabYQBhLZbVmVdFUaL1/MrvlAORGWuEfbU=";
   };
 
   postPatch = ''
@@ -30,7 +30,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     nodejs_24
-    pnpm_9
+    pnpm_10
     pnpmConfigHook
     makeWrapper
     python3
