@@ -23,7 +23,7 @@
     "cord-nvim": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-IRbo0otJ3onH9cmwPXAFzomCktv+ACbzponpN8quPt8=/Cargo.lock",
+                "sha256-zQNkfw3YrEvs9JMgC5UnVE09S_bCIRT+R1j4KaAA0Kc=/Cargo.lock",
                 {}
             ]
         },
@@ -39,16 +39,16 @@
             "name": null,
             "owner": "vyfor",
             "repo": "cord.nvim",
-            "rev": "v2.3.21",
-            "sha256": "sha256-IRbo0otJ3onH9cmwPXAFzomCktv+ACbzponpN8quPt8=",
+            "rev": "v2.3.29",
+            "sha256": "sha256-zQNkfw3YrEvs9JMgC5UnVE09S/bCIRT+R1j4KaAA0Kc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.3.21"
+        "version": "v2.3.29"
     },
     "equibop": {
         "cargoLock": null,
-        "date": "2026-07-09",
+        "date": "2026-08-23",
         "extract": null,
         "name": "equibop",
         "passthru": null,
@@ -60,17 +60,17 @@
             "name": null,
             "owner": "Equicord",
             "repo": "Equicord",
-            "rev": "f06917ad86e9285cfe4523af2b05ab3a12276bda",
-            "sha256": "sha256-noA8iw7cixzNH3ZherQiEr2CXMpU+XR3vSxk3gldx1E=",
+            "rev": "328e2ce76216e27a2d8e78d4723014adef079803",
+            "sha256": "sha256-d15msuvzITPE9tzuZaJoWFRue77vFSAsaFLSV8e2PRM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f06917ad86e9285cfe4523af2b05ab3a12276bda"
+        "version": "328e2ce76216e27a2d8e78d4723014adef079803"
     },
     "fallow": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-cQ_aDaSx9PBdKxAa4_PA1sb_NEJuCoOa3j_bzWUDjZg=/Cargo.lock",
+                "sha256-ic6jZ_TWqfdKFWDgdB0bXnbAbjmXlw7mKWcenxRNooM=/Cargo.lock",
                 {}
             ]
         },
@@ -86,12 +86,12 @@
             "name": null,
             "owner": "fallow-rs",
             "repo": "fallow",
-            "rev": "v3.3.0",
-            "sha256": "sha256-cQ/aDaSx9PBdKxAa4/PA1sb/NEJuCoOa3j/bzWUDjZg=",
+            "rev": "v3.18.0",
+            "sha256": "sha256-ic6jZ/TWqfdKFWDgdB0bXnbAbjmXlw7mKWcenxRNooM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.3.0"
+        "version": "v3.18.0"
     },
     "g": {
         "cargoLock": null,
@@ -127,12 +127,12 @@
             "name": null,
             "owner": "safishamsi",
             "repo": "graphify",
-            "rev": "v0.9.11",
-            "sha256": "sha256-5cVbvPyLHaEBLQ7adVCrPUlS5l5mLIfKZ5IbMlU1jvc=",
+            "rev": "v0.9.50",
+            "sha256": "sha256-RBL86ezqLdf+TDXWW9vWTUCr29pygwlIpCLPyCe5WXA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.11"
+        "version": "v0.9.50"
     },
     "grompt": {
         "cargoLock": null,

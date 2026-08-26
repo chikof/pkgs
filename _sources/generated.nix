@@ -19,16 +19,16 @@
   };
   cord-nvim = {
     pname = "cord-nvim";
-    version = "v2.3.21";
+    version = "v2.3.29";
     src = fetchFromGitHub {
       owner = "vyfor";
       repo = "cord.nvim";
-      rev = "v2.3.21";
+      rev = "v2.3.29";
       fetchSubmodules = false;
-      sha256 = "sha256-IRbo0otJ3onH9cmwPXAFzomCktv+ACbzponpN8quPt8=";
+      sha256 = "sha256-zQNkfw3YrEvs9JMgC5UnVE09S/bCIRT+R1j4KaAA0Kc=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-IRbo0otJ3onH9cmwPXAFzomCktv+ACbzponpN8quPt8=/Cargo.lock";
+      lockFile = ./. + "/sha256-zQNkfw3YrEvs9JMgC5UnVE09S_bCIRT+R1j4KaAA0Kc=/Cargo.lock";
       outputHashes = {
         
       };
@@ -36,28 +36,28 @@
   };
   equibop = {
     pname = "equibop";
-    version = "f06917ad86e9285cfe4523af2b05ab3a12276bda";
+    version = "328e2ce76216e27a2d8e78d4723014adef079803";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "f06917ad86e9285cfe4523af2b05ab3a12276bda";
+      rev = "328e2ce76216e27a2d8e78d4723014adef079803";
       fetchSubmodules = false;
-      sha256 = "sha256-noA8iw7cixzNH3ZherQiEr2CXMpU+XR3vSxk3gldx1E=";
+      sha256 = "sha256-d15msuvzITPE9tzuZaJoWFRue77vFSAsaFLSV8e2PRM=";
     };
-    date = "2026-07-09";
+    date = "2026-08-23";
   };
   fallow = {
     pname = "fallow";
-    version = "v3.3.0";
+    version = "v3.18.0";
     src = fetchFromGitHub {
       owner = "fallow-rs";
       repo = "fallow";
-      rev = "v3.3.0";
+      rev = "v3.18.0";
       fetchSubmodules = false;
-      sha256 = "sha256-cQ/aDaSx9PBdKxAa4/PA1sb/NEJuCoOa3j/bzWUDjZg=";
+      sha256 = "sha256-ic6jZ/TWqfdKFWDgdB0bXnbAbjmXlw7mKWcenxRNooM=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-cQ_aDaSx9PBdKxAa4_PA1sb_NEJuCoOa3j_bzWUDjZg=/Cargo.lock";
+      lockFile = ./. + "/sha256-ic6jZ_TWqfdKFWDgdB0bXnbAbjmXlw7mKWcenxRNooM=/Cargo.lock";
       outputHashes = {
         
       };
@@ -79,13 +79,13 @@
   };
   graphify = {
     pname = "graphify";
-    version = "v0.9.11";
+    version = "v0.9.50";
     src = fetchFromGitHub {
       owner = "safishamsi";
       repo = "graphify";
-      rev = "v0.9.11";
+      rev = "v0.9.50";
       fetchSubmodules = false;
-      sha256 = "sha256-5cVbvPyLHaEBLQ7adVCrPUlS5l5mLIfKZ5IbMlU1jvc=";
+      sha256 = "sha256-RBL86ezqLdf+TDXWW9vWTUCr29pygwlIpCLPyCe5WXA=";
     };
   };
   grompt = {
