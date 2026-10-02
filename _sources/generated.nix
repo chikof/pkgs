@@ -36,28 +36,28 @@
   };
   equibop = {
     pname = "equibop";
-    version = "328e2ce76216e27a2d8e78d4723014adef079803";
+    version = "ab9b98472acb281cc7ec4d2c7a612219993bb3cb";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "328e2ce76216e27a2d8e78d4723014adef079803";
+      rev = "ab9b98472acb281cc7ec4d2c7a612219993bb3cb";
       fetchSubmodules = false;
-      sha256 = "sha256-d15msuvzITPE9tzuZaJoWFRue77vFSAsaFLSV8e2PRM=";
+      sha256 = "sha256-hk2/djNmbwIBwVAJ1bj3ayurj85EPfMUgmAr1SpYlvw=";
     };
-    date = "2026-08-23";
+    date = "2026-09-29";
   };
   fallow = {
     pname = "fallow";
-    version = "v3.18.0";
+    version = "v3.31.0";
     src = fetchFromGitHub {
       owner = "fallow-rs";
       repo = "fallow";
-      rev = "v3.18.0";
+      rev = "v3.31.0";
       fetchSubmodules = false;
-      sha256 = "sha256-ic6jZ/TWqfdKFWDgdB0bXnbAbjmXlw7mKWcenxRNooM=";
+      sha256 = "sha256-w74xpC9o8mBuIkTK6NJhqb8QQEK3Nmp3Yv/WzvQAb3Y=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-ic6jZ_TWqfdKFWDgdB0bXnbAbjmXlw7mKWcenxRNooM=/Cargo.lock";
+      lockFile = ./. + "/sha256-w74xpC9o8mBuIkTK6NJhqb8QQEK3Nmp3Yv_WzvQAb3Y=/Cargo.lock";
       outputHashes = {
         
       };
@@ -79,13 +79,13 @@
   };
   graphify = {
     pname = "graphify";
-    version = "v0.9.50";
+    version = "v0.9.73";
     src = fetchFromGitHub {
       owner = "safishamsi";
       repo = "graphify";
-      rev = "v0.9.50";
+      rev = "v0.9.73";
       fetchSubmodules = false;
-      sha256 = "sha256-RBL86ezqLdf+TDXWW9vWTUCr29pygwlIpCLPyCe5WXA=";
+      sha256 = "sha256-Xd8l7c/cITMzGvlUd6M4ELg+fOuQrOOTSwTg9Sv+HbY=";
     };
   };
   grompt = {
