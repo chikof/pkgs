@@ -175,6 +175,21 @@
         },
         "version": "f51b0acc157f96682e2f93a5b994766b039ec2ba"
     },
+    "tersio": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "tersio",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-T6i34TUsL/9nU/T7PJWVp/a+3f6Vhjml/QDYjM7Kl5g=",
+            "type": "url",
+            "url": "https://registry.npmjs.org/@krtclcdy/tersio/-/tersio-2.25.4.tgz"
+        },
+        "version": "2.25.4"
+    },
     "typescript-svelte-plugin": {
         "cargoLock": null,
         "date": null,

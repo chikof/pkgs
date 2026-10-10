@@ -114,6 +114,14 @@
     };
     date = "2026-04-25";
   };
+  tersio = {
+    pname = "tersio";
+    version = "2.25.4";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/@krtclcdy/tersio/-/tersio-2.25.4.tgz";
+      sha256 = "sha256-T6i34TUsL/9nU/T7PJWVp/a+3f6Vhjml/QDYjM7Kl5g=";
+    };
+  };
   typescript-svelte-plugin = {
     pname = "typescript-svelte-plugin";
     version = "0.3.52";

@@ -13,6 +13,7 @@ in {
   fallow = pkgs.callPackage ./fallow.nix {inherit sources maintainers;};
   grompt = pkgs.callPackage ./grompt.nix {inherit sources maintainers;};
   graphify = pkgs.python3Packages.callPackage ./graphify.nix {inherit sources maintainers;};
+  tersio = pkgs.callPackage ./tersio.nix {inherit sources maintainers;};
 
   vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs sources maintainers;};
 }

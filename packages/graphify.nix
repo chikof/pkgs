@@ -3,6 +3,7 @@
   maintainers,
   sources,
   buildPythonApplication,
+  python,
   setuptools,
   networkx,
   tree-sitter,
@@ -48,6 +49,15 @@ buildPythonApplication (finalAttrs: {
       tree-sitter-verilog
       tree-sitter-zig
     ]);
+
+  # omp has no upstream platform; expose the `agents` skill bundle (uses the Task tool) as a skills dir
+  postInstall = ''
+    site=$out/${python.sitePackages}/graphify
+    skill=$out/share/graphify/skills/graphify
+    mkdir -p "$skill"
+    cp "$site/skill-agents.md" "$skill/SKILL.md"
+    cp -r "$site/skills/agents/references" "$skill/references"
+  '';
 
   meta = {
     description = "AI coding assistant skill. Turn any folder of code, docs, papers, images, or videos into a queryable knowledge graph.";

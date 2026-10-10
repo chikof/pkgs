@@ -16,6 +16,7 @@ Custom Nix packages.
 | `fallow`                               | Rust-native codebase intelligence for TypeScript and JavaScript |
 | `grompt`                               | starship.rs killer                                              |
 | `graphify`                             | AI coding assistant skill.                                      |
+| `tersio`                               | Token saver and usage tracker for coding agents                 |
 
 ## Install
 
