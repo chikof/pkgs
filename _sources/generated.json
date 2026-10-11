@@ -48,7 +48,7 @@
     },
     "equibop": {
         "cargoLock": null,
-        "date": "2026-09-29",
+        "date": "2026-10-09",
         "extract": null,
         "name": "equibop",
         "passthru": null,
@@ -60,17 +60,17 @@
             "name": null,
             "owner": "Equicord",
             "repo": "Equicord",
-            "rev": "ab9b98472acb281cc7ec4d2c7a612219993bb3cb",
-            "sha256": "sha256-hk2/djNmbwIBwVAJ1bj3ayurj85EPfMUgmAr1SpYlvw=",
+            "rev": "e0e85c8d4f6dc73aac9368cf3f4b2200eac4d4b4",
+            "sha256": "sha256-jnfVr39Oag+DqobGmvIIv4JBOZt+eHQnyNct+SagcvI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ab9b98472acb281cc7ec4d2c7a612219993bb3cb"
+        "version": "e0e85c8d4f6dc73aac9368cf3f4b2200eac4d4b4"
     },
     "fallow": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-w74xpC9o8mBuIkTK6NJhqb8QQEK3Nmp3Yv_WzvQAb3Y=/Cargo.lock",
+                "sha256-m+iL3wNAgdqaIa7mKA_d4059znGW3dGlLZeamdXgOYc=/Cargo.lock",
                 {}
             ]
         },
@@ -86,12 +86,12 @@
             "name": null,
             "owner": "fallow-rs",
             "repo": "fallow",
-            "rev": "v3.31.0",
-            "sha256": "sha256-w74xpC9o8mBuIkTK6NJhqb8QQEK3Nmp3Yv/WzvQAb3Y=",
+            "rev": "v3.33.1",
+            "sha256": "sha256-m+iL3wNAgdqaIa7mKA/d4059znGW3dGlLZeamdXgOYc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.31.0"
+        "version": "v3.33.1"
     },
     "g": {
         "cargoLock": null,
@@ -127,16 +127,16 @@
             "name": null,
             "owner": "safishamsi",
             "repo": "graphify",
-            "rev": "v0.9.73",
-            "sha256": "sha256-Xd8l7c/cITMzGvlUd6M4ELg+fOuQrOOTSwTg9Sv+HbY=",
+            "rev": "v0.9.85",
+            "sha256": "sha256-xYWsrnwGQ7aH/UhS7r6f4DlA2b3jlFEnagXXrO9fpeo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.73"
+        "version": "v0.9.85"
     },
     "grompt": {
         "cargoLock": null,
-        "date": "2026-06-03",
+        "date": "2026-10-11",
         "extract": null,
         "name": "grompt",
         "passthru": null,
@@ -146,13 +146,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "454b177040cd38da0398b2672f74b262d67f65cb",
-            "sha256": "sha256-PY7xJvn14rI27DVTzJYgJkQ7e9IRPbCXcYVXOhTkWjQ=",
+            "rev": "7633784e1b838faa11c55ff3166c2a29abd1790a",
+            "sha256": "sha256-Heskjt1Cn0HQcGMkumu0G9upP+MBPL43xTwy+4IGKnk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://codeberg.org/estebxn/grompt"
         },
-        "version": "454b177040cd38da0398b2672f74b262d67f65cb"
+        "version": "7633784e1b838faa11c55ff3166c2a29abd1790a"
     },
     "nano-ffmpeg": {
         "cargoLock": null,

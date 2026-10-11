@@ -36,28 +36,28 @@
   };
   equibop = {
     pname = "equibop";
-    version = "ab9b98472acb281cc7ec4d2c7a612219993bb3cb";
+    version = "e0e85c8d4f6dc73aac9368cf3f4b2200eac4d4b4";
     src = fetchFromGitHub {
       owner = "Equicord";
       repo = "Equicord";
-      rev = "ab9b98472acb281cc7ec4d2c7a612219993bb3cb";
+      rev = "e0e85c8d4f6dc73aac9368cf3f4b2200eac4d4b4";
       fetchSubmodules = false;
-      sha256 = "sha256-hk2/djNmbwIBwVAJ1bj3ayurj85EPfMUgmAr1SpYlvw=";
+      sha256 = "sha256-jnfVr39Oag+DqobGmvIIv4JBOZt+eHQnyNct+SagcvI=";
     };
-    date = "2026-09-29";
+    date = "2026-10-09";
   };
   fallow = {
     pname = "fallow";
-    version = "v3.31.0";
+    version = "v3.33.1";
     src = fetchFromGitHub {
       owner = "fallow-rs";
       repo = "fallow";
-      rev = "v3.31.0";
+      rev = "v3.33.1";
       fetchSubmodules = false;
-      sha256 = "sha256-w74xpC9o8mBuIkTK6NJhqb8QQEK3Nmp3Yv/WzvQAb3Y=";
+      sha256 = "sha256-m+iL3wNAgdqaIa7mKA/d4059znGW3dGlLZeamdXgOYc=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-w74xpC9o8mBuIkTK6NJhqb8QQEK3Nmp3Yv_WzvQAb3Y=/Cargo.lock";
+      lockFile = ./. + "/sha256-m+iL3wNAgdqaIa7mKA_d4059znGW3dGlLZeamdXgOYc=/Cargo.lock";
       outputHashes = {
         
       };
@@ -79,28 +79,28 @@
   };
   graphify = {
     pname = "graphify";
-    version = "v0.9.73";
+    version = "v0.9.85";
     src = fetchFromGitHub {
       owner = "safishamsi";
       repo = "graphify";
-      rev = "v0.9.73";
+      rev = "v0.9.85";
       fetchSubmodules = false;
-      sha256 = "sha256-Xd8l7c/cITMzGvlUd6M4ELg+fOuQrOOTSwTg9Sv+HbY=";
+      sha256 = "sha256-xYWsrnwGQ7aH/UhS7r6f4DlA2b3jlFEnagXXrO9fpeo=";
     };
   };
   grompt = {
     pname = "grompt";
-    version = "454b177040cd38da0398b2672f74b262d67f65cb";
+    version = "7633784e1b838faa11c55ff3166c2a29abd1790a";
     src = fetchgit {
       url = "https://codeberg.org/estebxn/grompt";
-      rev = "454b177040cd38da0398b2672f74b262d67f65cb";
+      rev = "7633784e1b838faa11c55ff3166c2a29abd1790a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PY7xJvn14rI27DVTzJYgJkQ7e9IRPbCXcYVXOhTkWjQ=";
+      sha256 = "sha256-Heskjt1Cn0HQcGMkumu0G9upP+MBPL43xTwy+4IGKnk=";
     };
-    date = "2026-06-03";
+    date = "2026-10-11";
   };
   nano-ffmpeg = {
     pname = "nano-ffmpeg";
