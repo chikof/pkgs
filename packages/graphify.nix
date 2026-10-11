@@ -18,6 +18,10 @@ buildPythonApplication (finalAttrs: {
 
   dontCheckRuntimeDeps = true;
 
+  # graphify re-execs itself via `sys.executable -m graphify` unless PYTHONHASHSEED is set;
+  # the nix wrapper adds site dirs in-process only, so the child cannot import graphify
+  makeWrapperArgs = ["--set" "PYTHONHASHSEED" "0"];
+
   build-system = [
     setuptools
   ];
