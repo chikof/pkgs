@@ -17,6 +17,8 @@ Custom Nix packages.
 | `grompt`                               | starship.rs killer                                              |
 | `graphify`                             | AI coding assistant skill.                                      |
 | `tersio`                               | Token saver and usage tracker for coding agents                 |
+| `symposium`                            | AI the Rust Way: per-crate skills, hooks and MCP for agents     |
+| `symposium-rust-analyzer`              | MCP server exposing rust-analyzer LSP features                  |
 
 ## Install
 

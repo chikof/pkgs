@@ -1,0 +1,18 @@
+--- a/src/hook.rs	2026-10-19 23:29:39.014871099 +0100
++++ b/src/hook.rs	2026-10-19 23:29:39.144874000 +0100
+@@ -329,7 +329,14 @@
+         }
+         Err(e) => {
+             tracing::warn!(?event, error = %e, "hook failed");
+-            ExitCode::FAILURE
++            // a blocking plugin hook: agents read exit 2 + stderr as the block reason
++            match e.to_string().strip_prefix("plugin blocked: ") {
++                Some(reason) => {
++                    eprintln!("{reason}");
++                    ExitCode::from(2)
++                }
++                None => ExitCode::FAILURE,
++            }
+         }
+     }
+ }

@@ -114,6 +114,41 @@
     };
     date = "2026-04-25";
   };
+  symposium = {
+    pname = "symposium";
+    version = "symposium-v0.5.1";
+    src = fetchFromGitHub {
+      owner = "symposium-dev";
+      repo = "symposium";
+      rev = "symposium-v0.5.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-6x5feHW8CoQgf9npimlnY8vqb2MXWkYFlDmj3bR4oOI=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-6x5feHW8CoQgf9npimlnY8vqb2MXWkYFlDmj3bR4oOI=/Cargo.lock";
+      outputHashes = {
+        
+      };
+    };
+  };
+  symposium-rust-analyzer = {
+    pname = "symposium-rust-analyzer";
+    version = "d16d8c34ea80317b222a06aad8010d2d79a2a26c";
+    src = fetchFromGitHub {
+      owner = "symposium-dev";
+      repo = "symposium-rust-analyzer";
+      rev = "d16d8c34ea80317b222a06aad8010d2d79a2a26c";
+      fetchSubmodules = false;
+      sha256 = "sha256-FQhUstgGMzEYGTFTm7QBjI8+VLus0KgRiBIPI4x2cUA=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-FQhUstgGMzEYGTFTm7QBjI8+VLus0KgRiBIPI4x2cUA=/Cargo.lock";
+      outputHashes = {
+        
+      };
+    };
+    date = "2026-05-20";
+  };
   tersio = {
     pname = "tersio";
     version = "2.25.4";

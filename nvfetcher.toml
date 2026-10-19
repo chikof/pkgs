@@ -50,3 +50,16 @@ src.exclude_regex = "^v?1\\.0\\.0$"    # 1.0.0 is actually the oldest version
 [tersio]
 src.manual = "2.25.4"
 fetch.url = "https://registry.npmjs.org/@krtclcdy/tersio/-/tersio-$ver.tgz"
+
+[symposium]
+src.github_tag = "symposium-dev/symposium"
+src.include_regex = "^symposium-v.*"
+fetch.github = "symposium-dev/symposium"
+cargo_lock = ["Cargo.lock"]
+
+# no release since v0.1.1 (an ACP proxy); main is the pure stdio MCP server
+[symposium-rust-analyzer]
+src.git = "https://github.com/symposium-dev/symposium-rust-analyzer"
+src.branch = "main"
+fetch.github = "symposium-dev/symposium-rust-analyzer"
+cargo_lock = ["Cargo.lock"]

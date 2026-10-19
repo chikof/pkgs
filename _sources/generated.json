@@ -175,6 +175,58 @@
         },
         "version": "f51b0acc157f96682e2f93a5b994766b039ec2ba"
     },
+    "symposium": {
+        "cargoLock": {
+            "Cargo.lock": [
+                "sha256-6x5feHW8CoQgf9npimlnY8vqb2MXWkYFlDmj3bR4oOI=/Cargo.lock",
+                {}
+            ]
+        },
+        "date": null,
+        "extract": null,
+        "name": "symposium",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "symposium-dev",
+            "repo": "symposium",
+            "rev": "symposium-v0.5.1",
+            "sha256": "sha256-6x5feHW8CoQgf9npimlnY8vqb2MXWkYFlDmj3bR4oOI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "symposium-v0.5.1"
+    },
+    "symposium-rust-analyzer": {
+        "cargoLock": {
+            "Cargo.lock": [
+                "sha256-FQhUstgGMzEYGTFTm7QBjI8+VLus0KgRiBIPI4x2cUA=/Cargo.lock",
+                {}
+            ]
+        },
+        "date": "2026-05-20",
+        "extract": null,
+        "name": "symposium-rust-analyzer",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "symposium-dev",
+            "repo": "symposium-rust-analyzer",
+            "rev": "d16d8c34ea80317b222a06aad8010d2d79a2a26c",
+            "sha256": "sha256-FQhUstgGMzEYGTFTm7QBjI8+VLus0KgRiBIPI4x2cUA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "d16d8c34ea80317b222a06aad8010d2d79a2a26c"
+    },
     "tersio": {
         "cargoLock": null,
         "date": null,

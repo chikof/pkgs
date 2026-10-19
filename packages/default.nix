@@ -14,6 +14,8 @@ in {
   grompt = pkgs.callPackage ./grompt.nix {inherit sources maintainers;};
   graphify = pkgs.python3Packages.callPackage ./graphify.nix {inherit sources maintainers;};
   tersio = pkgs.callPackage ./tersio.nix {inherit sources maintainers;};
+  symposium = pkgs.callPackage ./symposium.nix {inherit sources maintainers;};
+  symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit sources maintainers;};
 
   vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs sources maintainers;};
 }
