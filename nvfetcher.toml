@@ -69,3 +69,8 @@ cargo_lock = ["Cargo.lock"]
 [rea]
 src.manual = "6.7.0"
 fetch.url = "https://registry.npmjs.org/rea-agents/-/rea-agents-$ver.tgz"
+
+[seanime-denshi]
+src.github = "5rahim/seanime"
+src.prefix = "v"
+fetch.url = "https://github.com/5rahim/seanime/releases/download/v$ver/seanime-denshi-$ver_Linux_x86_64.AppImage"

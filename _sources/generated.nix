@@ -122,6 +122,14 @@
       sha256 = "sha256-IJWKZtuhoBHlCkhr65Rjo0MSjtNoyYT5QGU2LBP1H5A=";
     };
   };
+  seanime-denshi = {
+    pname = "seanime-denshi";
+    version = "3.10.4";
+    src = fetchurl {
+      url = "https://github.com/5rahim/seanime/releases/download/v3.10.4/seanime-denshi-3.10.4_Linux_x86_64.AppImage";
+      sha256 = "sha256-vB07WwRbG+E3j0UBr8Q2vygsBS1fslRROt3y469wFPU=";
+    };
+  };
   symposium = {
     pname = "symposium";
     version = "symposium-v0.5.1";

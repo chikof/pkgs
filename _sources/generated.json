@@ -175,6 +175,21 @@
         },
         "version": "f51b0acc157f96682e2f93a5b994766b039ec2ba"
     },
+    "seanime-denshi": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "seanime-denshi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-vB07WwRbG+E3j0UBr8Q2vygsBS1fslRROt3y469wFPU=",
+            "type": "url",
+            "url": "https://github.com/5rahim/seanime/releases/download/v3.10.4/seanime-denshi-3.10.4_Linux_x86_64.AppImage"
+        },
+        "version": "3.10.4"
+    },
     "symposium": {
         "cargoLock": {
             "Cargo.lock": [

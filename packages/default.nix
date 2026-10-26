@@ -24,6 +24,7 @@ in rec {
   tersio = pkgs.callPackage ./tersio.nix {inherit sources maintainers;};
   symposium = pkgs.callPackage ./symposium.nix {inherit sources maintainers;};
   symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit sources maintainers;};
+  seanime-denshi = pkgs.callPackage ./seanime-denshi.nix {inherit sources maintainers;};
 
   vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs sources maintainers;};
 }
