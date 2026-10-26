@@ -1,7 +1,7 @@
 {
   lib,
   maintainers,
-  sources,
+  fetchFromGitHub,
   buildPythonApplication,
   python,
   setuptools,
@@ -14,7 +14,14 @@ buildPythonApplication (finalAttrs: {
   pname = "graphify";
   pyproject = true;
 
-  inherit (sources.graphify) src version;
+  version = "0.9.85";
+
+  src = fetchFromGitHub {
+    owner = "safishamsi";
+    repo = "graphify";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-xYWsrnwGQ7aH/UhS7r6f4DlA2b3jlFEnagXXrO9fpeo=";
+  };
 
   dontCheckRuntimeDeps = true;
 

@@ -1,17 +1,24 @@
 {
   lib,
   buildGoModule,
-  sources,
+  fetchFromCodeberg,
   maintainers,
 }:
 buildGoModule (finalAttrs: {
   pname = "grompt";
-  version = "unstable-${sources.grompt.date}";
+  version = "0-unstable-2026-10-11";
 
-  inherit (sources.grompt) src;
+  src = fetchFromCodeberg {
+    owner = "estebxn";
+    repo = "grompt";
+    rev = "7633784e1b838faa11c55ff3166c2a29abd1790a";
+    hash = "sha256-Heskjt1Cn0HQcGMkumu0G9upP+MBPL43xTwy+4IGKnk=";
+  };
 
   vendorHash = null;
   ldflags = ["-s" "-w"];
+
+  passthru.updateArgs = ["--version=branch"];
 
   meta = {
     description = "starship.rs killer";

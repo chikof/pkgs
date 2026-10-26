@@ -1,17 +1,25 @@
 {
   lib,
+  fetchFromGitHub,
   rustPlatform,
   makeWrapper,
   cargo,
   maintainers,
-  sources,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "symposium";
-  version = lib.removePrefix "symposium-v" sources.symposium.version;
+  version = "0.5.1";
 
-  inherit (sources.symposium) src;
-  cargoLock = sources.symposium.cargoLock."Cargo.lock";
+  src = fetchFromGitHub {
+    owner = "symposium-dev";
+    repo = "symposium";
+    tag = "symposium-v${finalAttrs.version}";
+    hash = "sha256-6x5feHW8CoQgf9npimlnY8vqb2MXWkYFlDmj3bR4oOI=";
+  };
+
+  cargoHash = "sha256-oUCglBkQuOUpxJuM67ZACl8Jv5gP42EBbLEOph+IeOA=";
+
+  passthru.updateArgs = ["--version-regex=symposium-v(.*)"];
 
   # v0.5.1 exits 1 with no reason when a plugin hook blocks a call; fixed upstream on main (exit 2 + stderr)
   patches = [./symposium-hook-block-exit-2.patch];

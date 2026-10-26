@@ -31,9 +31,11 @@ let
           # 2.1.2 builds with versioningit; 2.1.4 (what nixpkgs expects) uses setuptools-scm
           build-system = old.build-system ++ [final.versioningit];
           # no git metadata in the store, so give versioningit a fallback version
-          postPatch = (old.postPatch or "") + ''
-            sed -i '/^\[tool.versioningit\]/a default-version = "2.1.2"' pyproject.toml
-          '';
+          postPatch =
+            (old.postPatch or "")
+            + ''
+              sed -i '/^\[tool.versioningit\]/a default-version = "2.1.2"' pyproject.toml
+            '';
         });
     };
   };

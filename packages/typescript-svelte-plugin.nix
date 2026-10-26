@@ -1,11 +1,17 @@
 {
   lib,
+  fetchurl,
   stdenvNoCC,
-  sources,
   maintainers,
 }:
-stdenvNoCC.mkDerivation {
-  inherit (sources.typescript-svelte-plugin) pname version src;
+stdenvNoCC.mkDerivation (finalAttrs: {
+  pname = "typescript-svelte-plugin";
+  version = "0.3.52";
+
+  src = fetchurl {
+    url = "https://registry.npmjs.org/typescript-svelte-plugin/-/typescript-svelte-plugin-${finalAttrs.version}.tgz";
+    hash = "sha256-F0psKMVXJw4hSucCUtgHw/47uA0k+sbMqRdhZFTwAFo=";
+  };
 
   sourceRoot = "package";
 
@@ -22,4 +28,4 @@ stdenvNoCC.mkDerivation {
     license = lib.licenses.mit;
     maintainers = [maintainers.chiko];
   };
-}
+})

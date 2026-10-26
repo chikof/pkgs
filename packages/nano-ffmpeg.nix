@@ -1,17 +1,24 @@
 {
   lib,
   buildGoModule,
-  sources,
+  fetchFromGitHub,
   maintainers,
 }:
 buildGoModule (finalAttrs: {
   pname = "nano-ffmpeg";
-  version = "unstable-${sources.nano-ffmpeg.date}";
+  version = "0-unstable-2026-04-25";
 
-  inherit (sources.nano-ffmpeg) src;
+  src = fetchFromGitHub {
+    owner = "dgr8akki";
+    repo = "nano-ffmpeg";
+    rev = "f51b0acc157f96682e2f93a5b994766b039ec2ba";
+    hash = "sha256-4uZ2y+Qe4uMrnpzl8BHQEWFNkhwNBBwoxb5RMnLyGfM=";
+  };
 
   vendorHash = "sha256-irJksXupZGHzZ5vbFeI9laKi5+LyATc1lMxpMLLl69w=";
   ldflags = ["-s" "-w"];
+
+  passthru.updateArgs = ["--version=branch"];
 
   meta = {
     description = "ffmpeg made easy";

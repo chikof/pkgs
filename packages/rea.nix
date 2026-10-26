@@ -1,6 +1,7 @@
 {
   lib,
   buildNpmPackage,
+  fetchurl,
   jq,
   makeWrapper,
   ghidra,
@@ -26,7 +27,6 @@
   wakaru,
   jadx-headless-mcp,
   maintainers,
-  sources,
 }: let
   prlimit = lib.getExe' util-linux "prlimit";
   # every REA tool path must be absolute; defaults only so a caller can still override
@@ -71,8 +71,14 @@
     REA_JADX_MCP_JAR = "${jadx-headless-mcp}/share/java/jadx-headless-mcp.jar";
   };
 in
-  buildNpmPackage {
-    inherit (sources.rea) pname version src;
+  buildNpmPackage (finalAttrs: {
+    pname = "rea";
+    version = "6.7.0";
+
+    src = fetchurl {
+      url = "https://registry.npmjs.org/rea-agents/-/rea-agents-${finalAttrs.version}.tgz";
+      hash = "sha256-IJWKZtuhoBHlCkhr65Rjo0MSjtNoyYT5QGU2LBP1H5A=";
+    };
 
     # ponytail: frida (optional dep, native prebuilds) dropped; add back with a prebuilt-fetching override if dynamic instrumentation is needed.
     nodejs = nodejs_24;
@@ -86,6 +92,12 @@ in
     '';
 
     npmDepsHash = "sha256-L1oa5cvF9MbefEOWP8+i7UpMy8SOA9L2geBYGWmT21E=";
+
+    # scripts/update.sh regenerates the lockfile (dev/optional deps stripped, as in postPatch) on each bump
+    passthru.npmLock = {
+      file = "rea-package-lock.json";
+      jq = "del(.devDependencies, .optionalDependencies)";
+    };
 
     # dist/ is prebuilt
     dontNpmBuild = true;
@@ -105,4 +117,4 @@ in
       maintainers = [maintainers.chiko];
       mainProgram = "rea";
     };
-  }
+  })

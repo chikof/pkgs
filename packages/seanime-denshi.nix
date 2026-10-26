@@ -1,15 +1,22 @@
 {
   lib,
   appimageTools,
+  fetchurl,
   mpv,
-  sources,
   maintainers,
 }: let
-  inherit (sources.seanime-denshi) pname version src;
+  pname = "seanime-denshi";
+  version = "3.10.4";
+  src = fetchurl {
+    url = "https://github.com/5rahim/seanime/releases/download/v${version}/seanime-denshi-${version}_Linux_x86_64.AppImage";
+    hash = "sha256-vB07WwRbG+E3j0UBr8Q2vygsBS1fslRROt3y469wFPU=";
+  };
   contents = appimageTools.extract {inherit pname version src;};
 in
   appimageTools.wrapType2 {
     inherit pname version src;
+
+    passthru.updateArgs = ["--url=https://github.com/5rahim/seanime"];
 
     # seanime shells out to mpv for playback
     extraPkgs = _: [mpv];

@@ -1,4 +1,5 @@
 {
+  fetchFromGitHub,
   fetchPnpmDeps,
   lib,
   makeWrapper,
@@ -11,11 +12,17 @@
   sqlite,
   stdenv,
   maintainers,
-  sources,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "cavemem";
-  inherit (sources.cavemem) version src;
+  version = "0.2.1";
+
+  src = fetchFromGitHub {
+    owner = "JuliusBrussee";
+    repo = "cavemem";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-0YkpwaBYyH/nJCV0Y2EvaFL1KEvVtgf/tN2h1azwdNg=";
+  };
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;

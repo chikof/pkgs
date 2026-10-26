@@ -30,6 +30,13 @@
       )
       pkgSet);
 
+    # full package set incl. our vimPlugins (nested sets are invalid under `packages`); used by scripts/ and CI
+    legacyPackages = forAllSystems (system: let
+      pkgs = pkgsFor system;
+    in
+      (import ./packages {inherit pkgs maintainers;})
+      // {vimPlugins = import ./packages/vim-plugins {inherit pkgs maintainers;};});
+
     overlays.default = final: prev:
       import ./packages {
         pkgs = prev;
@@ -44,10 +51,9 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           alejandra
+          jq
           nix-update
-          nix-prefetch
-          nix-prefetch-github
-          nvfetcher
+          nodejs
         ];
       };
     });

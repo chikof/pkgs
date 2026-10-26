@@ -1,17 +1,25 @@
 {
   lib,
+  fetchFromGitHub,
   rustPlatform,
   makeWrapper,
   rust-analyzer,
   maintainers,
-  sources,
 }:
 rustPlatform.buildRustPackage {
   pname = "symposium-rust-analyzer";
-  version = "0.1.1-unstable-${sources.symposium-rust-analyzer.date}";
+  version = "0.1.1-unstable-2026-05-20";
 
-  inherit (sources.symposium-rust-analyzer) src;
-  cargoLock = sources.symposium-rust-analyzer.cargoLock."Cargo.lock";
+  src = fetchFromGitHub {
+    owner = "symposium-dev";
+    repo = "symposium-rust-analyzer";
+    rev = "d16d8c34ea80317b222a06aad8010d2d79a2a26c";
+    hash = "sha256-FQhUstgGMzEYGTFTm7QBjI8+VLus0KgRiBIPI4x2cUA=";
+  };
+
+  cargoHash = "sha256-Zj5TJaiJCjuz1sYXP5OnGoFLIDB0xgCpzGSCBwQ/UFQ=";
+
+  passthru.updateArgs = ["--version=branch"];
 
   # integration tests spawn rust-analyzer against a fixture project
   doCheck = false;

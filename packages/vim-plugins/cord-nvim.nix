@@ -1,21 +1,26 @@
 {
   lib,
+  fetchFromGitHub,
   rustPlatform,
   versionCheckHook,
-  nix-update-script,
   vimUtils,
-  sources,
   maintainers,
 }: let
-  inherit (sources.cord-nvim) src version;
-  cargoLock = sources.cord-nvim.cargoLock."Cargo.lock";
+  version = "2.3.29";
+  src = fetchFromGitHub {
+    owner = "vyfor";
+    repo = "cord.nvim";
+    tag = "v${version}";
+    hash = "sha256-zQNkfw3YrEvs9JMgC5UnVE09S/bCIRT+R1j4KaAA0Kc=";
+  };
   cord-server = rustPlatform.buildRustPackage {
     pname = "cord";
-    inherit src version cargoLock;
+    inherit src version;
+    cargoHash = "sha256-f2bYDfWFfOm2H4iy0FS4g3NFW7uTB5/1CE7AQSr5llM=";
 
     # The version in .github/server-version.txt differs from the one in Cargo.toml
     postPatch = ''
-      echo "${lib.removePrefix "v" version}" > .github/server-version.txt
+      echo "${version}" > .github/server-version.txt
     '';
 
     # cord depends on nightly features
@@ -41,7 +46,7 @@ in
         --replace-fail \
           "or M.get_data_path()" \
           "or '${cord-server}'"
-      echo "${lib.removePrefix "v" version}" > .github/server-metadata.txt
+      echo "${version}" > .github/server-metadata.txt
     '';
 
     nvimSkipModules = [
@@ -49,11 +54,10 @@ in
     ];
 
     passthru = {
-      updateScript = nix-update-script {
-        attrPath = "vimPlugins.cord-nvim.cord-nvim-rust";
-      };
+      # cargoHash lives on the server; scripts/update.sh bumps it as a subpackage
+      updateArgs = ["--subpackage" "cord-server"];
 
-      # needed for the update script
+      # nix-update --subpackage resolves this
       inherit cord-server;
     };
 

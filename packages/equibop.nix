@@ -1,4 +1,5 @@
 {
+  fetchFromGitHub,
   git,
   lib,
   nodejs,
@@ -10,15 +11,19 @@
   discord-ptb,
   discord-canary,
   discord-development,
-  sources,
   maintainers,
   buildWebExtension ? false,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "equicord";
-  version = "unstable-${sources.equibop.date}";
+  version = "0-unstable-2026-10-09";
 
-  inherit (sources.equibop) src;
+  src = fetchFromGitHub {
+    owner = "Equicord";
+    repo = "Equicord";
+    rev = "e0e85c8d4f6dc73aac9368cf3f4b2200eac4d4b4";
+    hash = "sha256-jnfVr39Oag+DqobGmvIIv4JBOZt+eHQnyNct+SagcvI=";
+  };
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
@@ -61,6 +66,8 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   passthru = {
+    updateArgs = ["--version=branch"];
+
     tests = lib.genAttrs' [discord discord-ptb discord-canary discord-development] (
       p: lib.nameValuePair p.pname p.tests.withEquicord
     );

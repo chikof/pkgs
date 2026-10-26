@@ -1,16 +1,24 @@
 {
   lib,
+  fetchFromGitHub,
   gitMinimal,
   rustPlatform,
   versionCheckHook,
   maintainers,
-  sources,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "fallow";
 
-  inherit (sources.fallow) src version;
-  cargoLock = sources.fallow.cargoLock."Cargo.lock";
+  version = "3.33.1";
+
+  src = fetchFromGitHub {
+    owner = "fallow-rs";
+    repo = "fallow";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-m+iL3wNAgdqaIa7mKA/d4059znGW3dGlLZeamdXgOYc=";
+  };
+
+  cargoHash = "sha256-YiDNl1ULczMxXWmWnObpE7eS18nnZp+AToaUyouNzbU=";
 
   doCheck = false;
 
