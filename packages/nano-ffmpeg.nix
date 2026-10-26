@@ -15,7 +15,7 @@ buildGoModule (finalAttrs: {
     hash = "sha256-4uZ2y+Qe4uMrnpzl8BHQEWFNkhwNBBwoxb5RMnLyGfM=";
   };
 
-  vendorHash = "sha256-irJksXupZGHzZ5vbFeI9laKi5+LyATc1lMxpMLLl69w=";
+  vendorHash = "sha256-AZzpINOagTfFPYOavp15oJD/LTlDoX4NfDA0DYV39NM=";
   ldflags = ["-s" "-w"];
 
   passthru.updateArgs = ["--version=branch"];
