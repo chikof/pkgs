@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - name: Format
+        run: nix develop -c alejandra --check .
+      - name: Flake
+        run: nix flake check --no-build
+
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      attrs: ${{ steps.list.outputs.attrs }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - id: list
+        run: echo "attrs=$(nix develop -c scripts/list.sh | jq -R -s -c 'split("\n")[:-1]')" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: list
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        attr: ${{ fromJSON(needs.list.outputs.attrs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - uses: cachix/cachix-action@v16
+        if: vars.CACHIX_CACHE != ''
+        with:
+          name: ${{ vars.CACHIX_CACHE }}
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      # rea pulls ghidra, chromium, jdk...: the runner disk is too small without this
+      - name: Free disk
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache
+      # flake output, so a broken flake wiring fails here too
+      - name: Build
+        run: nix build -L --no-link ".#legacyPackages.x86_64-linux.${{ matrix.attr }}"

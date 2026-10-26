@@ -1,0 +1,97 @@
+name: update
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+    inputs:
+      attr:
+        description: Only update this package (empty = all)
+        required: false
+
+concurrency: update
+
+permissions:
+  contents: write
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      attrs: ${{ steps.list.outputs.attrs }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - id: list
+        run: |
+          if [ -n "${{ inputs.attr }}" ]; then list='${{ inputs.attr }}'; else list=$(nix develop -c scripts/list.sh updatable); fi
+          echo "attrs=$(jq -R -s -c 'split("\n") | map(select(. != ""))' <<<"$list")" >> "$GITHUB_OUTPUT"
+
+  # one job per package: bump, build, commit only if the build passes, push
+  package:
+    needs: list
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        attr: ${{ fromJSON(needs.list.outputs.attrs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: cachix/cachix-action@v16
+        if: vars.CACHIX_CACHE != ''
+        with:
+          name: ${{ vars.CACHIX_CACHE }}
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: nix develop -c scripts/update.sh "${{ matrix.attr }}"
+      # jobs run in parallel and touch different files, so rebase-and-retry is enough
+      - name: Push
+        run: |
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((RANDOM % 10 + 2))
+          done
+          exit 1
+
+  # nixpkgs bump: only lands if every package still builds
+  flake-lock:
+    if: inputs.attr == ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: cachix/cachix-action@v16
+        if: vars.CACHIX_CACHE != ''
+        with:
+          name: ${{ vars.CACHIX_CACHE }}
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - name: Free disk
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache
+      - run: nix flake update
+      - name: Build everything against the new nixpkgs
+        run: |
+          if git diff --quiet flake.lock; then echo "flake.lock up to date"; exit 0; fi
+          nix develop -c scripts/list.sh | while read -r a; do
+            nix build -L --no-link ".#legacyPackages.x86_64-linux.$a"
+          done
+      - name: Push
+        run: |
+          git diff --quiet flake.lock && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -qam "flake.lock: update nixpkgs"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((RANDOM % 10 + 2))
+          done
+          exit 1

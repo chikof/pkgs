@@ -18,23 +18,18 @@
   in {
     lib = {inherit maintainers;};
 
-    packages = forAllSystems (system: let
-      pkgs = pkgsFor system;
-      pkgSet = import ./packages {inherit pkgs maintainers;};
-    in
-      nixpkgs.lib.mapAttrs (
-        name: value:
-          if nixpkgs.lib.isDerivation value
-          then value
-          else removeAttrs value (builtins.attrNames (pkgs.${name} or {}))
-      )
-      pkgSet);
+    packages = forAllSystems (system:
+      nixpkgs.lib.filterAttrs (_: nixpkgs.lib.isDerivation)
+      (import ./packages {
+        pkgs = pkgsFor system;
+        inherit maintainers;
+      }));
 
-    # full package set incl. our vimPlugins (nested sets are invalid under `packages`); used by scripts/ and CI
+    # nested sets (vimPlugins) are invalid under `packages`; scripts/ and CI use this to reach them
     legacyPackages = forAllSystems (system: let
       pkgs = pkgsFor system;
     in
-      (import ./packages {inherit pkgs maintainers;})
+      self.packages.${system}
       // {vimPlugins = import ./packages/vim-plugins {inherit pkgs maintainers;};});
 
     overlays.default = final: prev:
@@ -61,7 +56,7 @@
     checks = forAllSystems (system:
       nixpkgs.lib.mapAttrs' (name: pkg:
         nixpkgs.lib.nameValuePair "package-${name}" pkg)
-      (nixpkgs.lib.filterAttrs (n: _: n != "default")
-        self.packages.${system}));
+      (self.packages.${system}
+        // {inherit (self.legacyPackages.${system}.vimPlugins) cord-nvim;}));
   };
 }
