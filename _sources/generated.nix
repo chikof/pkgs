@@ -114,6 +114,14 @@
     };
     date = "2026-04-25";
   };
+  rea = {
+    pname = "rea";
+    version = "6.7.0";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/rea-agents/-/rea-agents-6.7.0.tgz";
+      sha256 = "sha256-IJWKZtuhoBHlCkhr65Rjo0MSjtNoyYT5QGU2LBP1H5A=";
+    };
+  };
   symposium = {
     pname = "symposium";
     version = "symposium-v0.5.1";

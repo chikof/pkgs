@@ -63,3 +63,9 @@ src.git = "https://github.com/symposium-dev/symposium-rust-analyzer"
 src.branch = "main"
 fetch.github = "symposium-dev/symposium-rust-analyzer"
 cargo_lock = ["Cargo.lock"]
+
+# 6.8.0 needs Node >=24.22.1/26.12.1; nixpkgs has 24.21.0. Bump when nixpkgs catches up.
+# bump: edit version, run nvfetcher, regenerate packages/rea-package-lock.json, refresh npmDepsHash
+[rea]
+src.manual = "6.7.0"
+fetch.url = "https://registry.npmjs.org/rea-agents/-/rea-agents-$ver.tgz"
