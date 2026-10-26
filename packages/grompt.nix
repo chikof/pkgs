@@ -6,13 +6,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "grompt";
-  version = "0-unstable-2026-10-11";
+  version = "0-unstable-2026-10-18";
 
   src = fetchFromCodeberg {
     owner = "estebxn";
     repo = "grompt";
-    rev = "7633784e1b838faa11c55ff3166c2a29abd1790a";
-    hash = "sha256-Heskjt1Cn0HQcGMkumu0G9upP+MBPL43xTwy+4IGKnk=";
+    rev = "468241ab7d20d89948ca5849d25c9759a253642c";
+    hash = "sha256-rNP08TG1WLeBE1X93M+Rip7vaNRHivxr8BvmXvlqdg0=";
   };
 
   vendorHash = null;
