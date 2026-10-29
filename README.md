@@ -16,6 +16,7 @@ Custom Nix packages.
 | `fallow`                               | Rust-native codebase intelligence for TypeScript and JavaScript |
 | `grompt`                               | starship.rs killer                                              |
 | `graphify`                             | AI coding assistant skill.                                      |
+| `taste-skill`                          | Anti-slop frontend design skill for coding agents               |
 | `tersio`                               | Token saver and usage tracker for coding agents                 |
 | `symposium`                            | AI the Rust Way: per-crate skills, hooks and MCP for agents     |
 | `symposium-rust-analyzer`              | MCP server exposing rust-analyzer LSP features                  |
