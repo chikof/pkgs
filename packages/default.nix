@@ -24,6 +24,7 @@
   symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit maintainers;};
   seanime-denshi = pkgs.callPackage ./seanime-denshi.nix {inherit maintainers;};
   taste-skill = pkgs.callPackage ./taste-skill.nix {inherit maintainers;};
+  google-sans-flex = pkgs.callPackage ./google-sans-flex.nix {inherit maintainers;};
 
   vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs maintainers;};
 }

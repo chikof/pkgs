@@ -17,6 +17,7 @@ Custom Nix packages.
 | `grompt`                               | starship.rs killer                                              |
 | `graphify`                             | AI coding assistant skill.                                      |
 | `taste-skill`                          | Anti-slop frontend design skill for coding agents               |
+| `google-sans-flex`                     | Google Sans Flex variable font (OFL)                            |
 | `tersio`                               | Token saver and usage tracker for coding agents                 |
 | `symposium`                            | AI the Rust Way: per-crate skills, hooks and MCP for agents     |
 | `symposium-rust-analyzer`              | MCP server exposing rust-analyzer LSP features                  |
