@@ -38,8 +38,13 @@ buildNpmPackage (finalAttrs: {
   # dist/ is prebuilt in the tarball
   dontNpmBuild = true;
 
+  # omp's own PI_CODING_AGENT_DIR is ignored by tersio (only honored when PI_CODING_AGENT=true), so point the
+  # ledger and quota reads at the nix omp's data dir; env overrides still win
   postInstall = ''
-    wrapProgram $out/bin/tersio --prefix PATH : ${lib.makeBinPath [rtk sqlite]}
+    wrapProgram $out/bin/tersio \
+      --prefix PATH : ${lib.makeBinPath [rtk sqlite]} \
+      --run 'export TERSIO_SESSIONS_DIR="''${TERSIO_SESSIONS_DIR:-$HOME/.local/share/omp/sessions}"' \
+      --run 'export TERSIO_AGENT_SESSIONS_DB="''${TERSIO_AGENT_SESSIONS_DB:-$HOME/.local/share/omp/agent.db}"'
   '';
 
   meta = {
