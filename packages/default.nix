@@ -9,6 +9,7 @@
   cavemem = pkgs.callPackage ./cavemem.nix {inherit maintainers;};
   typescript-svelte-plugin = pkgs.callPackage ./typescript-svelte-plugin.nix {inherit maintainers;};
   fallow = pkgs.callPackage ./fallow.nix {inherit maintainers;};
+  bacon-ls = pkgs.callPackage ./bacon-ls.nix {inherit maintainers;};
   grompt = pkgs.callPackage ./grompt.nix {inherit maintainers;};
   graphify = pkgs.python3Packages.callPackage ./graphify.nix {inherit maintainers;};
   rea = pkgs.callPackage ./rea.nix {inherit maintainers rea-wabt rea-sigrok-cli rea-pwndbg rea-pwntools-python kuna wakaru jadx-headless-mcp;};

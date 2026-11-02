@@ -14,6 +14,7 @@ Custom Nix packages.
 | `cavemem`                              | Cross-agent persistent memory for AI coding assistants          |
 | `typescript-svelte-plugin`             | TypeScript plugin for Svelte                                    |
 | `fallow`                               | Rust-native codebase intelligence for TypeScript and JavaScript |
+| `bacon-ls`                             | LSP server exposing cargo/bacon diagnostics for Rust            |
 | `grompt`                               | starship.rs killer                                              |
 | `graphify`                             | AI coding assistant skill.                                      |
 | `taste-skill`                          | Anti-slop frontend design skill for coding agents               |
