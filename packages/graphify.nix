@@ -14,13 +14,13 @@ buildPythonApplication (finalAttrs: {
   pname = "graphify";
   pyproject = true;
 
-  version = "0.9.100";
+  version = "0.9.101";
 
   src = fetchFromGitHub {
     owner = "safishamsi";
     repo = "graphify";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-GUilodOOzVUuJ7VLLPVzen82j4K6hM/NmagY+U7KsSc=";
+    hash = "sha256-pCtS7urjG0jn/yGYWBQYEnuZKZwxHe0/g/E2Dde1Jpc=";
   };
 
   dontCheckRuntimeDeps = true;
