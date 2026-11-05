@@ -21,6 +21,7 @@
   wakaru = pkgs.callPackage ./wakaru.nix {inherit maintainers;};
   jadx-headless-mcp = pkgs.callPackage ./jadx-headless-mcp.nix {inherit maintainers;};
   tersio = pkgs.callPackage ./tersio.nix {inherit maintainers;};
+  robloxstudio-mcp = pkgs.callPackage ./robloxstudio-mcp.nix {inherit maintainers;};
   headroom = pkgs.python3Packages.callPackage ./headroom.nix {inherit maintainers;};
   symposium = pkgs.callPackage ./symposium.nix {inherit maintainers;};
   symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit maintainers;};
