@@ -18,6 +18,7 @@ Custom Nix packages.
 | `grompt`                               | starship.rs killer                                              |
 | `graphify`                             | AI coding assistant skill.                                      |
 | `taste-skill`                          | Anti-slop frontend design skill for coding agents               |
+| `security-audit-skill`                 | Multi-phase security audit skill with verified findings         |
 | `google-sans-flex`                     | Google Sans Flex variable font (OFL)                            |
 | `tersio`                               | Token saver and usage tracker for coding agents                 |
 | `headroom`                             | Context compression proxy for coding agents                     |
