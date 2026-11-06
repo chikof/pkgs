@@ -38,7 +38,7 @@
 # shortcut: x86_64-linux wheel only (Rust _core built by maturin upstream); build from sdist when another platform needs it
 buildPythonApplication (finalAttrs: {
   pname = "headroom";
-  version = "0.42.0";
+  version = "0.43.1";
   format = "wheel";
 
   src = fetchPypi {
@@ -49,14 +49,14 @@ buildPythonApplication (finalAttrs: {
     python = "cp310";
     abi = "abi3";
     platform = "manylinux_2_28_x86_64";
-    hash = "sha256-+7POuPbD8gjtzDqtQ8DgPg20VjbZ0gYVJa0NChZtoUY=";
+    hash = "sha256-LpzRqaq0L2CwCp98ioXPgoFbUbGYkXnl/dQN3QmRXW4=";
   };
 
   nativeBuildInputs = [autoPatchelfHook];
   buildInputs = [stdenv.cc.cc.lib];
 
   # nixpkgs mcp 1.29.0 / filelock 3.32.4; headroom never imports filelock itself, mcp >=1.30 only adds transports
-  pythonRelaxDeps = ["mcp" "filelock"];
+  pythonRelaxDeps = ["mcp" "filelock" "opentelemetry-api" "tomlkit"];
 
   dependencies = [
     tiktoken
