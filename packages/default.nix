@@ -28,6 +28,7 @@
   symposium = pkgs.callPackage ./symposium.nix {inherit maintainers;};
   symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit maintainers;};
   seanime-denshi = pkgs.callPackage ./seanime-denshi.nix {inherit maintainers;};
+  sonora = pkgs.callPackage ./sonora.nix {inherit maintainers;};
   taste-skill = pkgs.callPackage ./taste-skill.nix {inherit maintainers;};
   security-audit-skill = pkgs.callPackage ./security-audit-skill.nix {inherit maintainers;};
   roblox-brain = pkgs.callPackage ./roblox-brain.nix {inherit maintainers;};
