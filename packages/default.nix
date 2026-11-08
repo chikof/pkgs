@@ -30,6 +30,7 @@
   seanime-denshi = pkgs.callPackage ./seanime-denshi.nix {inherit maintainers;};
   sonora = pkgs.callPackage ./sonora.nix {inherit maintainers;};
   taste-skill = pkgs.callPackage ./taste-skill.nix {inherit maintainers;};
+  penpot-ai-kit = pkgs.callPackage ./penpot-ai-kit.nix {inherit maintainers;};
   security-audit-skill = pkgs.callPackage ./security-audit-skill.nix {inherit maintainers;};
   roblox-brain = pkgs.callPackage ./roblox-brain.nix {inherit maintainers;};
   google-sans-flex = pkgs.callPackage ./google-sans-flex.nix {inherit maintainers;};
