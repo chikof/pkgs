@@ -22,6 +22,8 @@ Custom Nix packages.
 | `google-sans-flex`                     | Google Sans Flex variable font (OFL)                            |
 | `tersio`                               | Token saver and usage tracker for coding agents                 |
 | `headroom`                             | Context compression proxy for coding agents                     |
+| `mcp-for-blender`                      | MCP server for driving Blender, with its addon bundled          |
+| `blender-mcp`                          | Blender GUI that auto-loads the mcp-for-blender addon           |
 | `symposium`                            | AI the Rust Way: per-crate skills, hooks and MCP for agents     |
 | `symposium-rust-analyzer`              | MCP server exposing rust-analyzer LSP features                  |
 | `sonora`                               | Native, familiar music streaming client                         |

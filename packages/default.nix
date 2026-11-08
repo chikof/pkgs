@@ -25,6 +25,8 @@
   robloxstudio-mcp = pkgs.callPackage ./robloxstudio-mcp.nix {inherit maintainers;};
   figma-developer-mcp = pkgs.callPackage ./figma-developer-mcp.nix {inherit maintainers;};
   headroom = pkgs.python3Packages.callPackage ./headroom.nix {inherit maintainers;};
+  mcp-for-blender = pkgs.python3Packages.callPackage ./mcp-for-blender.nix {inherit maintainers;};
+  blender-mcp = pkgs.callPackage ./blender-mcp.nix {inherit maintainers mcp-for-blender;};
   symposium = pkgs.callPackage ./symposium.nix {inherit maintainers;};
   symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit maintainers;};
   seanime-denshi = pkgs.callPackage ./seanime-denshi.nix {inherit maintainers;};
