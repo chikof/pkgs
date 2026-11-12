@@ -25,6 +25,7 @@
   robloxstudio-mcp = pkgs.callPackage ./robloxstudio-mcp.nix {inherit maintainers;};
   figma-developer-mcp = pkgs.callPackage ./figma-developer-mcp.nix {inherit maintainers;};
   headroom = pkgs.python3Packages.callPackage ./headroom.nix {inherit maintainers;};
+  lightpanda = pkgs.callPackage ./lightpanda.nix {inherit maintainers;};
   mcp-for-blender = pkgs.python3Packages.callPackage ./mcp-for-blender.nix {inherit maintainers;};
   blender-mcp = pkgs.callPackage ./blender-mcp.nix {inherit maintainers mcp-for-blender;};
   symposium = pkgs.callPackage ./symposium.nix {inherit maintainers;};
