@@ -6,13 +6,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "nano-ffmpeg";
-  version = "0-unstable-2026-04-25";
+  version = "0-unstable-2026-11-11";
 
   src = fetchFromGitHub {
     owner = "dgr8akki";
     repo = "nano-ffmpeg";
-    rev = "f51b0acc157f96682e2f93a5b994766b039ec2ba";
-    hash = "sha256-4uZ2y+Qe4uMrnpzl8BHQEWFNkhwNBBwoxb5RMnLyGfM=";
+    rev = "8c7f7d3785f231414bee72db40b0f461b480b44a";
+    hash = "sha256-QB/Z2vwaIjStyYFSFiFtVpUTxUHWrgs6YVmxfegfoYg=";
   };
 
   vendorHash = "sha256-AZzpINOagTfFPYOavp15oJD/LTlDoX4NfDA0DYV39NM=";
