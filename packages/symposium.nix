@@ -8,16 +8,16 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "symposium";
-  version = "0.5.1";
+  version = "0.6.0";
 
   src = fetchFromGitHub {
     owner = "symposium-dev";
     repo = "symposium";
     tag = "symposium-v${finalAttrs.version}";
-    hash = "sha256-6x5feHW8CoQgf9npimlnY8vqb2MXWkYFlDmj3bR4oOI=";
+    hash = "sha256-67bLgN6jBJuw79X81x6G2aEwARHl9q5l1rjj5pxz9hU=";
   };
 
-  cargoHash = "sha256-oUCglBkQuOUpxJuM67ZACl8Jv5gP42EBbLEOph+IeOA=";
+  cargoHash = "sha256-cnCb+i/uZztzfPF0kzMBYrXN45o07zK6vIq++VnxUoo=";
 
   passthru.updateArgs = ["--version-regex=symposium-v(.*)"];
 
