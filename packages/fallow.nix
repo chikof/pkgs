@@ -9,16 +9,16 @@
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "fallow";
 
-  version = "3.43.0";
+  version = "3.43.1";
 
   src = fetchFromGitHub {
     owner = "fallow-rs";
     repo = "fallow";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-ERd4wJEHxlNSb+3aXDtMZchsUXkOLwU1BKTvb5qvnkU=";
+    hash = "sha256-S5XUvV7RjO86ns0FscSnUtYpDGe4sUOYohmj9N+mkY4=";
   };
 
-  cargoHash = "sha256-FuLLvs53/4G4zPo4goX6WRNKtm686mI0dQfBEftYg9I=";
+  cargoHash = "sha256-dKhEe1K7VMDKZtWu/nz1accJJvAkFXRps6JwIK0H3GU=";
 
   doCheck = false;
 
