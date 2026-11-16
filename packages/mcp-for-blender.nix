@@ -54,13 +54,13 @@ let
 in
   buildPythonApplication (finalAttrs: {
     pname = "mcp-for-blender";
-    version = "2.2.9";
+    version = "2.3.0";
     pyproject = true;
 
     src = fetchPypi {
       pname = "mcp_for_blender";
       inherit (finalAttrs) version;
-      hash = "sha256-MFr1xXQmhfqB4u/L2KhzbLUAwdfJNGHLc/A6gmH86XU=";
+      hash = "sha256-ULdpf5MXiog3BYLll7DiCfCU668B4d/m9Ru8wULBgKk=";
     };
 
     build-system = [setuptools];
