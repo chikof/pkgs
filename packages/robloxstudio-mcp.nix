@@ -7,11 +7,11 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "robloxstudio-mcp";
-  version = "3.4.4";
+  version = "3.5.0";
 
   src = fetchurl {
     url = "https://registry.npmjs.org/@chrrxs/robloxstudio-mcp/-/robloxstudio-mcp-${finalAttrs.version}.tgz";
-    hash = "sha256-WfuLX+eaLbsxKqD3PxBnYzo/308xQnVl8fr+/gQyluQ=";
+    hash = "sha256-P4zN3EJxX2vL5SRxtIXM/avA+8nZ59S5+Mw+InJhYks=";
   };
 
   sourceRoot = "package";
@@ -22,7 +22,7 @@ buildNpmPackage (finalAttrs: {
     cp ${./robloxstudio-mcp-package-lock.json} package-lock.json
   '';
 
-  npmDepsHash = "sha256-0NmxJbI2DXeyldTeVeyo56SPpwoGa4WFF7BPJTjw8FY=";
+  npmDepsHash = "sha256-qQQvB7M5G+ATlpFk/UT8h30szSfMKAVNm5VDiyPTE4s=";
 
   # scripts/update.sh regenerates the lockfile (devDependencies stripped, as in postPatch) on each bump
   passthru.npmLock = {
