@@ -21,7 +21,6 @@
   wakaru = pkgs.callPackage ./wakaru.nix {inherit maintainers;};
   jadx-headless-mcp = pkgs.callPackage ./jadx-headless-mcp.nix {inherit maintainers;};
   tersio = pkgs.callPackage ./tersio.nix {inherit maintainers;};
-  opencode = pkgs.callPackage ./opencode.nix {inherit (pkgs) opencode;};
   robloxstudio-mcp = pkgs.callPackage ./robloxstudio-mcp.nix {inherit maintainers;};
   figma-developer-mcp = pkgs.callPackage ./figma-developer-mcp.nix {inherit maintainers;};
   headroom = pkgs.python3Packages.callPackage ./headroom.nix {inherit maintainers;};

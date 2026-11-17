@@ -27,6 +27,8 @@ buildPythonApplication (finalAttrs: {
 
   dontCheckRuntimeDeps = true;
 
+  pythonImportsCheck = ["graphify" "tree_sitter_json" "tree_sitter_sql" "yaml"];
+
   # graphify re-execs itself via `sys.executable -m graphify` unless PYTHONHASHSEED is set;
   # the nix wrapper adds site dirs in-process only, so the child cannot import graphify
   makeWrapperArgs = ["--set" "PYTHONHASHSEED" "0"];
