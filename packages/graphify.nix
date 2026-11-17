@@ -6,7 +6,9 @@
   python,
   setuptools,
   networkx,
+  pyyaml,
   tree-sitter,
+  tree-sitter-sql,
   tree-sitter-grammars,
 }:
 buildPythonApplication (finalAttrs: {
@@ -36,7 +38,9 @@ buildPythonApplication (finalAttrs: {
   dependencies =
     [
       networkx
+      pyyaml
       tree-sitter
+      tree-sitter-sql
     ]
     ++ (with tree-sitter-grammars; [
       tree-sitter-c
@@ -46,6 +50,7 @@ buildPythonApplication (finalAttrs: {
       tree-sitter-go
       tree-sitter-java
       tree-sitter-javascript
+      tree-sitter-json
       tree-sitter-julia
       tree-sitter-kotlin
       tree-sitter-lua
