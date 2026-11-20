@@ -21,7 +21,7 @@ jobs:
       attrs: ${{ steps.list.outputs.attrs }}
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
       - id: list
         run: |
           if [ -n "${{ inputs.attr }}" ]; then list='${{ inputs.attr }}'; else list=$(nix develop -c scripts/list.sh updatable); fi
@@ -37,7 +37,7 @@ jobs:
         attr: ${{ fromJSON(needs.list.outputs.attrs) }}
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: cachix/cachix-action@v17
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: cachix/cachix-action@v17
