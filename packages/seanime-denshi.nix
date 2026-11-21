@@ -6,10 +6,10 @@
   maintainers,
 }: let
   pname = "seanime-denshi";
-  version = "3.10.4";
+  version = "3.10.5";
   src = fetchurl {
     url = "https://github.com/5rahim/seanime/releases/download/v${version}/seanime-denshi-${version}_Linux_x86_64.AppImage";
-    hash = "sha256-vB07WwRbG+E3j0UBr8Q2vygsBS1fslRROt3y469wFPU=";
+    hash = "sha256-wOdBXE+4ljKhOjSivMatg2dvjXIcOzfiYyybJnVPkK0=";
   };
   contents = appimageTools.extract {inherit pname version src;};
 in
