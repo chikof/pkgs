@@ -8,11 +8,11 @@
 # Upstream builds from source with zig + a prebuilt V8 archive + crane; the release binary is the cheap pin.
 stdenv.mkDerivation rec {
   pname = "lightpanda";
-  version = "1.0.4";
+  version = "1.0.5";
 
   src = fetchurl {
     url = "https://github.com/lightpanda-io/browser/releases/download/${version}/lightpanda-x86_64-linux";
-    hash = "sha256-fSJlESmQEgOr25XGT0kGnEnoj1IR9NjExoKMEjxK2rQ=";
+    hash = "sha256-DsIfpIZ6uegrNShf9KsOczbGwdifJv6ZHyfXPIpni9c=";
   };
 
   dontUnpack = true;
