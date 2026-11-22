@@ -16,13 +16,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "equicord";
-  version = "0-unstable-2026-11-18";
+  version = "0-unstable-2026-11-21";
 
   src = fetchFromGitHub {
     owner = "Equicord";
     repo = "Equicord";
-    rev = "d7da0517c84637fa7bb8acb4e2e0f2ebf9069d2f";
-    hash = "sha256-LD0DdtnKFd8ir1CsASH8ghWaDQot9o18FVUOiuDD7IQ=";
+    rev = "dc685995613204d8219e2139eb4ecf96e0f6d41c";
+    hash = "sha256-dKtSky8hbWvqKyOJ6qztO2YbMXKSC00YV3fL78t2XxA=";
   };
 
   pnpmDeps = fetchPnpmDeps {
