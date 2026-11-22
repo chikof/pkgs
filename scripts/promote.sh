@@ -2,6 +2,7 @@
 # Land auto-update PRs whose bump commit is at least SOAK_DAYS old: rebase onto main, rebuild,
 # re-check advisories (some are published during the soak), push to main.
 # A PR that no longer builds or gained advisories is closed with an issue; the next update run starts over from main.
+# ATTR_INPUT (set by a dispatch for one package) restricts this to that package's PR.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 soak=${SOAK_DAYS:-3}
@@ -16,6 +17,7 @@ mapfile -t prs < <(gh pr list --label auto-update --state open --limit 200 --jso
 for line in "${prs[@]}"; do
   IFS=$'\t' read -r n ref title <<<"$line"
   attr=${ref#update/}
+  [ -z "${ATTR_INPUT:-}" ] || [ "$attr" = "$ATTR_INPUT" ] || continue # a dispatch for one attr must not land the others
   bump=${title#*: }
   git fetch -q origin "+refs/heads/main:refs/remotes/origin/main" "+refs/heads/$ref:refs/remotes/origin/$ref"
   age=$((($(date +%s) - $(git log -1 --format=%at "origin/$ref")) / 86400))

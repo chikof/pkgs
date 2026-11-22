@@ -179,4 +179,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Land soaked update PRs
+        env:
+          ATTR_INPUT: ${{ inputs.attr }}
         run: nix develop -c scripts/promote.sh
