@@ -34,7 +34,9 @@ jobs:
       - id: list
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: echo "attrs=$(nix develop -c scripts/changed.sh "$BASE" | jq -R -s -c 'split("\n")[:-1]')" >> "$GITHUB_OUTPUT"
+        run: |
+          list=$(nix develop -c scripts/changed.sh "$BASE")
+          echo "attrs=$(jq -R -s -c 'split("\n")[:-1]' <<<"$list")" >> "$GITHUB_OUTPUT"
 
   build:
     needs: list

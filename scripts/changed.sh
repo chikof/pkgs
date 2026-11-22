@@ -15,6 +15,7 @@ drvs() { # <flake dir>  ->  {attr: drvPath}
     in builtins.foldl'"'"' (a: n: a // one n p.${n}) { } (builtins.attrNames p)'
 }
 if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+  echo "changed.sh: base '$base' unavailable, building every package" >&2
   scripts/list.sh
   exit 0
 fi
@@ -23,4 +24,5 @@ trap 'git worktree remove --force "$tmp/base" 2>/dev/null; rm -rf "$tmp"' EXIT
 git worktree add -q --detach "$tmp/base" "$base"
 drvs "$tmp/base" >"$tmp/old.json"
 drvs "$PWD" >"$tmp/new.json"
+echo "changed.sh: comparing against $base" >&2
 jq -r -s '.[0] as $o | .[1] | to_entries[] | select($o[.key] != .value) | .key' "$tmp/old.json" "$tmp/new.json"
