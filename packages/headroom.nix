@@ -4,6 +4,7 @@
   fetchPypi,
   buildPythonApplication,
   autoPatchelfHook,
+  versionCheckHook,
   stdenv,
   # core
   tiktoken,
@@ -54,9 +55,12 @@ buildPythonApplication (finalAttrs: {
 
   nativeBuildInputs = [autoPatchelfHook];
   buildInputs = [stdenv.cc.cc.lib];
+  nativeCheckInputs = [versionCheckHook];
 
   # nixpkgs mcp 1.29.0 / filelock 3.32.4; headroom never imports filelock itself, mcp >=1.30 only adds transports
   pythonRelaxDeps = ["mcp" "filelock" "opentelemetry-api" "tomlkit"];
+
+  passthru.updateArgs = ["--url=https://github.com/headroomlabs-ai/headroom"];
 
   dependencies = [
     tiktoken

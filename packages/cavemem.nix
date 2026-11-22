@@ -11,6 +11,7 @@
   python3,
   sqlite,
   stdenv,
+  versionCheckHook,
   maintainers,
 }:
 stdenv.mkDerivation (finalAttrs: {
@@ -69,6 +70,9 @@ stdenv.mkDerivation (finalAttrs: {
       --add-flags "$out/lib/cavemem/dist/index.js"
     runHook postInstall
   '';
+
+  nativeInstallCheckInputs = [versionCheckHook];
+  doInstallCheck = true;
 
   meta = with lib; {
     description = "Cross-agent persistent memory for AI coding assistants";

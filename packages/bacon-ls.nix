@@ -2,6 +2,7 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
+  versionCheckHook,
   maintainers,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -22,6 +23,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
   doCheck = false;
 
   __structuredAttrs = true;
+
+  nativeInstallCheckInputs = [versionCheckHook];
+  doInstallCheck = true;
 
   meta = {
     description = "LSP server exposing cargo/bacon diagnostics for Rust";

@@ -49,6 +49,7 @@
           jq
           nix-update
           nodejs
+          osv-scanner
         ];
       };
     });

@@ -2,6 +2,7 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
+  versionCheckHook,
   vimUtils,
   maintainers,
 }: let
@@ -16,6 +17,9 @@
     pname = "duvet";
     inherit src version;
     cargoLock.lockFile = src + "/Cargo.lock";
+
+    nativeInstallCheckInputs = [versionCheckHook];
+    doInstallCheck = true;
 
     meta.mainProgram = "duvet";
   };

@@ -3,6 +3,7 @@
   stdenv,
   fetchurl,
   autoPatchelfHook,
+  versionCheckHook,
   maintainers,
 }:
 # Upstream builds from source with zig + a prebuilt V8 archive + crane; the release binary is the cheap pin.
@@ -18,6 +19,10 @@ stdenv.mkDerivation rec {
   dontUnpack = true;
   nativeBuildInputs = [autoPatchelfHook];
   buildInputs = [stdenv.cc.cc.lib];
+
+  nativeInstallCheckInputs = [versionCheckHook];
+  versionCheckProgramArg = "version";
+  doInstallCheck = true;
 
   installPhase = ''
     runHook preInstall

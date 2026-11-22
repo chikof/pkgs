@@ -30,7 +30,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     gitMinimal
   ];
 
-  doInstallCheck = false;
+  doInstallCheck = true;
   nativeInstallCheckInputs = [versionCheckHook];
 
   meta = {

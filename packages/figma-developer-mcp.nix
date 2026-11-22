@@ -3,6 +3,7 @@
   buildNpmPackage,
   fetchurl,
   jq,
+  versionCheckHook,
   maintainers,
 }:
 buildNpmPackage (finalAttrs: {
@@ -33,6 +34,9 @@ buildNpmPackage (finalAttrs: {
   # dist/ is prebuilt in the tarball
   dontNpmBuild = true;
   npmFlags = ["--ignore-scripts"];
+
+  nativeInstallCheckInputs = [versionCheckHook];
+  doInstallCheck = true;
 
   meta = {
     description = "Figma MCP server (Framelink) that reads designs through a personal access token; works with any MCP client";

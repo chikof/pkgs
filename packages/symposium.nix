@@ -4,6 +4,7 @@
   rustPlatform,
   makeWrapper,
   cargo,
+  versionCheckHook,
   maintainers,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -28,6 +29,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
   doCheck = false;
 
   __structuredAttrs = true;
+
+  nativeInstallCheckInputs = [versionCheckHook];
+  doInstallCheck = true;
 
   nativeBuildInputs = [makeWrapper];
 

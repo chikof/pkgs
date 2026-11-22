@@ -6,6 +6,7 @@
   makeWrapper,
   rtk,
   sqlite,
+  versionCheckHook,
   maintainers,
 }:
 buildNpmPackage (finalAttrs: {
@@ -37,6 +38,9 @@ buildNpmPackage (finalAttrs: {
 
   # dist/ is prebuilt in the tarball
   dontNpmBuild = true;
+
+  nativeInstallCheckInputs = [versionCheckHook];
+  doInstallCheck = true;
 
   # omp's own PI_CODING_AGENT_DIR is ignored by tersio (only honored when PI_CODING_AGENT=true), so point the
   # ledger and quota reads at the nix omp's data dir; env overrides still win

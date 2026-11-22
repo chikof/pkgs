@@ -5,6 +5,7 @@
   buildPythonApplication,
   python,
   setuptools,
+  versionCheckHook,
   networkx,
   pyyaml,
   tree-sitter,
@@ -26,6 +27,7 @@ buildPythonApplication (finalAttrs: {
   };
 
   dontCheckRuntimeDeps = true;
+  nativeCheckInputs = [versionCheckHook];
 
   pythonImportsCheck = ["graphify" "tree_sitter_json" "tree_sitter_sql" "yaml"];
 

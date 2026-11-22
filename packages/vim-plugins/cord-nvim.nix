@@ -29,7 +29,7 @@
     nativeInstallCheckInputs = [
       versionCheckHook
     ];
-    doInstallCheck = false;
+    doInstallCheck = true;
 
     meta.mainProgram = "cord";
   };

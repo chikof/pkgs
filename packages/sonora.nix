@@ -71,6 +71,8 @@ in
     };
 
     passthru.binary = fetchurl {
+      # gives this fetch a position in this file; nix-update --subpackage rewrites its hash there
+      meta.description = "sonora release binary";
       url = "https://github.com/sonorahq/sonora/releases/download/v${finalAttrs.version}/sonora-v${finalAttrs.version}-x86_64-unknown-linux-gnu";
       hash = "sha256-kIbkTKG/vChrlqjHDo768Sk1QD001ufIttBxR864qlM=";
     };
