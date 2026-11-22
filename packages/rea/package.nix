@@ -95,7 +95,7 @@ in
 
     # scripts/update.sh regenerates the lockfile (dev/optional deps stripped, as in postPatch) on each bump
     passthru.npmLock = {
-      file = "rea-package-lock.json";
+      file = "packages/rea/rea-package-lock.json";
       jq = "del(.devDependencies, .optionalDependencies)";
     };
 

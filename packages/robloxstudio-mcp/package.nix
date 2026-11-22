@@ -26,7 +26,7 @@ buildNpmPackage (finalAttrs: {
 
   # scripts/update.sh regenerates the lockfile (devDependencies stripped, as in postPatch) on each bump
   passthru.npmLock = {
-    file = "robloxstudio-mcp-package-lock.json";
+    file = "packages/robloxstudio-mcp/robloxstudio-mcp-package-lock.json";
     jq = "del(.devDependencies, .scripts)";
   };
 

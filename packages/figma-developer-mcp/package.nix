@@ -27,7 +27,7 @@ buildNpmPackage (finalAttrs: {
 
   # scripts/update.sh regenerates the lockfile (devDependencies stripped, as in postPatch) on each bump
   passthru.npmLock = {
-    file = "figma-developer-mcp-package-lock.json";
+    file = "packages/figma-developer-mcp/figma-developer-mcp-package-lock.json";
     jq = "del(.devDependencies, .scripts)";
   };
 

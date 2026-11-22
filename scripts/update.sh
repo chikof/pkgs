@@ -108,7 +108,7 @@ else
       fi
       fail
     fi
-    cp "$pkgdir/package-lock.json" "packages/$file"
+    cp "$pkgdir/package-lock.json" "$file"
     nix-update -f default.nix "$attr" "${args[@]}" --version=skip --no-src 2>&1 | tee -a "$log" || fail
   fi
 fi

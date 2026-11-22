@@ -32,7 +32,7 @@ buildNpmPackage (finalAttrs: {
 
   # scripts/update.sh regenerates the lockfile (devDependencies stripped, as in postPatch) on each bump
   passthru.npmLock = {
-    file = "tersio-package-lock.json";
+    file = "packages/tersio/tersio-package-lock.json";
     jq = "del(.devDependencies)";
   };
 

@@ -1,41 +1,24 @@
+# Every <name>/package.nix is a top-level attr; vim-plugins/ merges into vimPlugins instead.
 {
   pkgs,
   maintainers,
-}: rec {
-  equibop = pkgs.callPackage ./equibop.nix {inherit maintainers;};
-  unfetch = pkgs.callPackage ./unfetch.nix {inherit maintainers;};
-  g = pkgs.callPackage ./g.nix {inherit maintainers;};
-  nano-ffmpeg = pkgs.callPackage ./nano-ffmpeg.nix {inherit maintainers;};
-  cavemem = pkgs.callPackage ./cavemem.nix {inherit maintainers;};
-  typescript-svelte-plugin = pkgs.callPackage ./typescript-svelte-plugin.nix {inherit maintainers;};
-  fallow = pkgs.callPackage ./fallow.nix {inherit maintainers;};
-  bacon-ls = pkgs.callPackage ./bacon-ls.nix {inherit maintainers;};
-  grompt = pkgs.callPackage ./grompt.nix {inherit maintainers;};
-  graphify = pkgs.python3Packages.callPackage ./graphify.nix {inherit maintainers;};
-  rea = pkgs.callPackage ./rea.nix {inherit maintainers rea-wabt rea-sigrok-cli rea-pwndbg rea-pwntools-python kuna wakaru jadx-headless-mcp;};
-  rea-wabt = pkgs.callPackage ./rea-wabt.nix {};
-  rea-sigrok-cli = pkgs.callPackage ./rea-sigrok-cli.nix {};
-  rea-pwntools-python = pkgs.callPackage ./rea-pwntools-python.nix {};
-  rea-pwndbg = pkgs.callPackage ./rea-pwndbg.nix {inherit maintainers;};
-  kuna = pkgs.callPackage ./kuna.nix {inherit maintainers;};
-  wakaru = pkgs.callPackage ./wakaru.nix {inherit maintainers;};
-  jadx-headless-mcp = pkgs.callPackage ./jadx-headless-mcp.nix {inherit maintainers;};
-  tersio = pkgs.callPackage ./tersio.nix {inherit maintainers;};
-  robloxstudio-mcp = pkgs.callPackage ./robloxstudio-mcp.nix {inherit maintainers;};
-  figma-developer-mcp = pkgs.callPackage ./figma-developer-mcp.nix {inherit maintainers;};
-  headroom = pkgs.python3Packages.callPackage ./headroom.nix {inherit maintainers;};
-  lightpanda = pkgs.callPackage ./lightpanda.nix {inherit maintainers;};
-  mcp-for-blender = pkgs.python3Packages.callPackage ./mcp-for-blender.nix {inherit maintainers;};
-  blender-mcp = pkgs.callPackage ./blender-mcp.nix {inherit maintainers mcp-for-blender;};
-  symposium = pkgs.callPackage ./symposium.nix {inherit maintainers;};
-  symposium-rust-analyzer = pkgs.callPackage ./symposium-rust-analyzer.nix {inherit maintainers;};
-  seanime-denshi = pkgs.callPackage ./seanime-denshi.nix {inherit maintainers;};
-  sonora = pkgs.callPackage ./sonora.nix {inherit maintainers;};
-  taste-skill = pkgs.callPackage ./taste-skill.nix {inherit maintainers;};
-  penpot-ai-kit = pkgs.callPackage ./penpot-ai-kit.nix {inherit maintainers;};
-  security-audit-skill = pkgs.callPackage ./security-audit-skill.nix {inherit maintainers;};
-  roblox-brain = pkgs.callPackage ./roblox-brain.nix {inherit maintainers;};
-  google-sans-flex = pkgs.callPackage ./google-sans-flex.nix {inherit maintainers;};
-
-  vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs maintainers;};
-}
+}: let
+  inherit (pkgs) lib;
+  # packages that are not plain pkgs.callPackage
+  scope = {
+    graphify = pkgs.python3Packages;
+    headroom = pkgs.python3Packages;
+    mcp-for-blender = pkgs.python3Packages;
+  };
+  # sibling packages a package takes as arguments
+  siblings = {
+    rea = {inherit (self) rea-wabt rea-sigrok-cli rea-pwndbg rea-pwntools-python kuna wakaru jadx-headless-mcp;};
+    blender-mcp = {inherit (self) mcp-for-blender;};
+  };
+  names = builtins.attrNames (lib.filterAttrs (n: t: t == "directory" && builtins.pathExists (./. + "/${n}/package.nix")) (builtins.readDir ./.));
+  self =
+    lib.genAttrs names (n:
+      ((scope.${n} or pkgs).newScope {inherit maintainers;}) (./. + "/${n}/package.nix") (siblings.${n} or {}))
+    // {vimPlugins = pkgs.vimPlugins // import ./vim-plugins {inherit pkgs maintainers;};};
+in
+  self

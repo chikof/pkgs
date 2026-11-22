@@ -17,7 +17,7 @@ scan)
   lock=$(ev 'p.npmLock.file or null' | jq -r '. // empty')
   if [ -n "$lock" ]; then
     mkdir "$tmp/npm"
-    cp "packages/$lock" "$tmp/npm/package-lock.json"
+    cp "$lock" "$tmp/npm/package-lock.json"
     args+=(-L "$tmp/npm/package-lock.json")
   fi
   if [ "$(ev 'p ? src')" = true ]; then
@@ -33,7 +33,7 @@ scan)
   128) echo '[]'; exit 0 ;;
   *) exit "$rc" ;;
   esac
-  jq --arg tmp "$tmp/" --arg lock "packages/$lock" '
+  jq --arg tmp "$tmp/" --arg lock "$lock" '
     [.results[]? | .source.path as $path
      | (if ($path | startswith($tmp)) then $lock else ($path | sub("^/nix/store/[^/]+/"; "src/")) end) as $src
      | .packages[]? | .package as $p
