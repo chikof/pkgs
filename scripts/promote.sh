@@ -64,7 +64,6 @@ for line in "${prs[@]}"; do
     echo "::warning::$attr: main moved; retrying next run"
     continue
   fi
-  # GitHub marks the PR merged once its head commit is on main; close it ourselves if that has not happened yet
   # the push is done; GitHub marks the PR merged asynchronously, so a close that races it is not an error
   [ "$(gh pr view "$n" --json state --jq .state)" = MERGED ] || gh pr close "$n" --comment "Landed in $(git rev-parse HEAD)." || true
   git push -q origin --delete "$ref" 2>/dev/null || true # already deleted by GitHub
