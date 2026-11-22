@@ -21,18 +21,24 @@ jobs:
       - name: Flake
         run: nix flake check --no-build
 
+  # only attrs whose derivation differs from the base are built; an unknown base (new branch, dispatch) builds all
   list:
     runs-on: ubuntu-latest
     outputs:
       attrs: ${{ steps.list.outputs.attrs }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: cachix/install-nix-action@v31
       - id: list
-        run: echo "attrs=$(nix develop -c scripts/list.sh | jq -R -s -c 'split("\n")[:-1]')" >> "$GITHUB_OUTPUT"
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: echo "attrs=$(nix develop -c scripts/changed.sh "$BASE" | jq -R -s -c 'split("\n")[:-1]')" >> "$GITHUB_OUTPUT"
 
   build:
     needs: list
+    if: needs.list.outputs.attrs != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
