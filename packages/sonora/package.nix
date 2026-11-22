@@ -60,21 +60,21 @@
 in
   stdenv.mkDerivation (finalAttrs: {
     pname = "sonora";
-    version = "0.47.0";
+    version = "0.50.3";
 
     # desktop entry, icons and licences; the release asset is only the binary
     src = fetchFromGitHub {
       owner = "sonorahq";
       repo = "sonora";
       tag = "v${finalAttrs.version}";
-      hash = "sha256-0UC2xRaxU2N8jwLelxSaWdX+vRn8Oa9UYhERTw+R6fw=";
+      hash = "sha256-7ZzK6O06iLgw0FuYpw2chBlvGazKsI63C/XWsdDKQFg=";
     };
 
     passthru.binary = fetchurl {
       # gives this fetch a position in this file; nix-update --subpackage rewrites its hash there
       meta.description = "sonora release binary";
       url = "https://github.com/sonorahq/sonora/releases/download/v${finalAttrs.version}/sonora-v${finalAttrs.version}-x86_64-unknown-linux-gnu";
-      hash = "sha256-kIbkTKG/vChrlqjHDo768Sk1QD001ufIttBxR864qlM=";
+      hash = "sha256-/whkH0wHbltbmGyhDaavqOFUpq5tFbbROuQdrIU00CA=";
     };
 
     passthru.updateArgs = ["--subpackage" "binary"];
