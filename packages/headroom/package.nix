@@ -57,8 +57,8 @@ buildPythonApplication (finalAttrs: {
   buildInputs = [stdenv.cc.cc.lib];
   nativeCheckInputs = [versionCheckHook];
 
-  # nixpkgs mcp 1.29.0 / filelock 3.32.4; headroom never imports filelock itself, mcp >=1.30 only adds transports
-  pythonRelaxDeps = ["mcp" "filelock" "opentelemetry-api" "tomlkit"];
+  # nixpkgs mcp 1.29.0 / filelock 3.32.4 / click 8.4.2; headroom never imports filelock itself, mcp >=1.30 only adds transports
+  pythonRelaxDeps = ["mcp" "filelock" "opentelemetry-api" "tomlkit" "click"];
 
   passthru.updateArgs = ["--url=https://github.com/headroomlabs-ai/headroom"];
 
