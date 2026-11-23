@@ -39,7 +39,7 @@
 # shortcut: x86_64-linux wheel only (Rust _core built by maturin upstream); build from sdist when another platform needs it
 buildPythonApplication (finalAttrs: {
   pname = "headroom";
-  version = "0.43.1";
+  version = "0.45.0";
   format = "wheel";
 
   src = fetchPypi {
@@ -50,7 +50,7 @@ buildPythonApplication (finalAttrs: {
     python = "cp310";
     abi = "abi3";
     platform = "manylinux_2_28_x86_64";
-    hash = "sha256-LpzRqaq0L2CwCp98ioXPgoFbUbGYkXnl/dQN3QmRXW4=";
+    hash = "sha256-dcOG+52RJOqSWaYVZ/+kYSh1nyaVaRRZxufXUfnUwso=";
   };
 
   nativeBuildInputs = [autoPatchelfHook];
