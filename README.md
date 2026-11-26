@@ -28,6 +28,7 @@ Custom Nix packages.
 | `symposium`                            | AI the Rust Way: per-crate skills, hooks and MCP for agents     |
 | `symposium-rust-analyzer`              | MCP server exposing rust-analyzer LSP features                  |
 | `sonora`                               | Native, familiar music streaming client                         |
+| `sunbird`                              | Plugin runtime for Discord Phoenix (bring your own AppImage)    |
 
 ## Install
 
