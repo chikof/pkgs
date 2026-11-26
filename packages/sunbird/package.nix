@@ -5,6 +5,7 @@
   makeDesktopItem,
   copyDesktopItems,
   appimage-run,
+  libnotify,
   runtimeShell,
   maintainers,
 }:
@@ -44,7 +45,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
     substitute ${./sunbird.sh} $out/bin/sunbird \
       --replace-fail @runtimeShell@ ${runtimeShell} \
       --replace-fail @loader@ $out/lib/libphoenix.so \
-      --replace-fail @appimageRun@ ${lib.getExe finalAttrs.passthru.runner}
+      --replace-fail @appimageRun@ ${lib.getExe finalAttrs.passthru.runner} \
+      --replace-fail @notifySend@ ${lib.getExe' libnotify "notify-send"}
     chmod +x $out/bin/sunbird
   '';
 
@@ -81,7 +83,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
     longDescription = ''
       Discord Phoenix is not redistributable: download its AppImage yourself.
       `sunbird` uses `$SUNBIRD_APPIMAGE`, or else the newest `*discord*.AppImage`
-      in the current directory, `~/Applications`, `~/Downloads` or `~/Desktop`.
+      in the current directory, `~/Applications`, `~/Downloads` or `~/Desktop`,
+      or else the AppImage Discord last ran from.
       Set `SUNBIRD_GATE_ONLY=1` to open only the access gate without the plugin runtime.
     '';
     homepage = "https://github.com/sunbird-tools/sunbird";
