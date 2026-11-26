@@ -1,0 +1,57 @@
+diff --git a/crates/hook/src/image.rs b/crates/hook/src/image.rs
+index 69024cd..dc2deda 100644
+--- a/crates/hook/src/image.rs
++++ b/crates/hook/src/image.rs
+@@ -514,6 +514,27 @@ impl Image<'static> {
+    }
+ }
+ 
++#[cfg(target_os = "linux")]
++impl Image<'static> {
++   /// Hands the pages a scan faulted in back to the kernel. A scan reads every
++   /// page of the module, so without this the whole binary counts as resident
++   /// until memory pressure reclaims it, not only what Discord itself runs.
++   /// Patched pages are private copies: paging out may swap them, never drop
++   /// them.
++   pub fn release_scanned(&self) {
++      // SAFETY: no preconditions.
++      let page = usize::try_from(unsafe { libc::sysconf(libc::_SC_PAGESIZE) }).unwrap_or(4096);
++      for segment in self.segments.iter().filter(|segment| !segment.writable) {
++         let start = segment.addr & !(page - 1);
++         let len = segment.addr + segment.bytes.len() - start;
++         // SAFETY: the range is this module's own mapping, and paging out
++         // never changes what a later read returns. A kernel without
++         // `MADV_PAGEOUT` (before 5.4) fails the call and nothing changes.
++         unsafe { libc::madvise(start as *mut c_void, len, libc::MADV_PAGEOUT) };
++      }
++   }
++}
++
+ #[cfg(all(unix, not(target_vendor = "apple")))]
+ impl Image<'static> {
+    /// Writes each `(slot, value)` pair into this module's mapped memory and
+diff --git a/crates/runtime-desktop/src/lib.rs b/crates/runtime-desktop/src/lib.rs
+index 3ce135f..5142821 100644
+--- a/crates/runtime-desktop/src/lib.rs
++++ b/crates/runtime-desktop/src/lib.rs
+@@ -121,6 +121,8 @@ pub fn prepare() -> Result<(), Error> {
+    }
+    // The index is tens of MB and nothing reads it after startup.
+    phoenix_sigs::desktop::release_call_index();
++   #[cfg(target_os = "linux")]
++   image.release_scanned();
+    *PREPARED.lock().unwrap_or_else(PoisonError::into_inner) = Some((image, registry?));
+    Ok(())
+ }
+@@ -129,7 +131,10 @@ pub fn prepare() -> Result<(), Error> {
+ /// without Sunbird. For telling Discord's own behaviour from ours.
+ pub fn open_gate_only() -> Result<(), Error> {
+    phoenix_runtime::set_platform(&Desktop);
+-   open_access_gate(&phoenix_runtime::target()?);
++   let image = phoenix_runtime::target()?;
++   open_access_gate(&image);
++   #[cfg(target_os = "linux")]
++   image.release_scanned();
+    Ok(())
+ }
+ 

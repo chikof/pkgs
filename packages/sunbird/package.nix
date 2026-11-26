@@ -26,6 +26,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
   # workspace tests cover the Android patcher and UI codecs, not the Linux loader
   doCheck = false;
 
+  # scanning for hooks leaves all 422 MB of Discord's binary resident; https://github.com/chikof/sunbird/tree/hook/release-scanned-pages
+  patches = [./release-scanned-pages.patch];
+
   # the runtime string-compares this with the site's date-based version; `nix-` sorts after every date,
   # so it never asks for a restart over a loader update that only a package bump delivers
   postPatch = ''
