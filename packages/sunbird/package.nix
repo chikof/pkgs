@@ -11,13 +11,13 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "sunbird";
-  version = "0.1.0-unstable-2026-11-25";
+  version = "0.1.0-unstable-2026-11-26";
 
   src = fetchFromGitHub {
     owner = "sunbird-tools";
     repo = "sunbird";
-    rev = "10f30b3390d52d12e23e28ead49dcca8e2df32ef";
-    hash = "sha256-nNECHS6aDWOgSaoyaCl/x6PkQiN2RPpmMrgB42BX9dg=";
+    rev = "302d4356a1d0bcb6f53ac50163a9bd6678c66ee2";
+    hash = "sha256-92za8p1JdxncG4lT/4Z4SMIQoBvURuuBBIB1vdxPPYg=";
   };
 
   cargoHash = "sha256-zvsr8LAnZhCTQlgNPgoENyDXtcV8hKPu9s8Ry888xbE=";
