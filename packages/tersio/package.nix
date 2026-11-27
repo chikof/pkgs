@@ -11,11 +11,11 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "tersio";
-  version = "2.25.22";
+  version = "2.25.23";
 
   src = fetchurl {
     url = "https://registry.npmjs.org/@krtclcdy/tersio/-/tersio-${finalAttrs.version}.tgz";
-    hash = "sha256-gEMtHQOOzXUbyiV94C79DNesyk59YonKfxyurX5/X9w=";
+    hash = "sha256-yzJarLkU+p6QAbyrhKntcGAiQuIlLmYp6v/AutNzEww=";
   };
 
   sourceRoot = "package";
@@ -28,7 +28,7 @@ buildNpmPackage (finalAttrs: {
     cp ${./tersio-package-lock.json} package-lock.json
   '';
 
-  npmDepsHash = "sha256-SMJAr5jr7gP+beWZy/p+lNvIVpa8pfdP5VuzcpcStys=";
+  npmDepsHash = "sha256-hglxpj4ScPOt0nDTmj2LuAg76TABPQgOTggK5AUFpoc=";
 
   # scripts/update.sh regenerates the lockfile (devDependencies stripped, as in postPatch) on each bump
   passthru.npmLock = {
