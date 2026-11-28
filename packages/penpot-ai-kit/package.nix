@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "penpot-ai-kit";
-  version = "0.5.1";
+  version = "0.6.0";
 
   src = fetchFromGitHub {
     owner = "penpot";
